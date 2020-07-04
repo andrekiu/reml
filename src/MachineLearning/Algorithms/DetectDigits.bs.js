@@ -7,13 +7,12 @@ var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var Random = require("bs-platform/lib/js/random.js");
 var Belt_Array = require("bs-platform/lib/js/belt_Array.js");
-var Pervasives = require("bs-platform/lib/js/pervasives.js");
 var Caml_primitive = require("bs-platform/lib/js/caml_primitive.js");
 var CamlinternalOO = require("bs-platform/lib/js/camlinternalOO.js");
 var Canvas$ReasonReactExamples = require("../Canvas.bs.js");
 var LinAlg$ReasonReactExamples = require("../LinAlg.bs.js");
 var Stylus$ReasonReactExamples = require("../Stylus.bs.js");
-var TrainingQueue$ReasonReactExamples = require("../UI/TrainingQueue.bs.js");
+var MLEngine$ReasonReactExamples = require("./Engines/MLEngine.bs.js");
 
 function forn(fn, n) {
   var _ix = 0;
@@ -379,129 +378,21 @@ var Prediction = {
   make: DetectDigits$Prediction
 };
 
-function reducer(state, action) {
-  switch (action.tag | 0) {
-    case /* WorkerStarted */0 :
-        return {
-                training: state.training,
-                to_predict: state.to_predict,
-                send_to_worker: action[0]
-              };
-    case /* Update */1 :
-        var init = state.training;
-        return {
-                training: {
-                  samples: init.samples,
-                  params: $$Array.append(state.training.params, /* array */[{
-                          theta: action[0],
-                          cost: action[1],
-                          accuracy: action[2]
-                        }])
-                },
-                to_predict: state.to_predict,
-                send_to_worker: state.send_to_worker
-              };
-    case /* SetSamples */2 :
-        var init$1 = state.training;
-        return {
-                training: {
-                  samples: action[0],
-                  params: init$1.params
-                },
-                to_predict: state.to_predict,
-                send_to_worker: state.send_to_worker
-              };
-    case /* Predicted */3 :
-        var pred = action[1];
-        console.log(pred);
-        return {
-                training: state.training,
-                to_predict: /* Predicted */Block.__(1, [
-                    action[0],
-                    pred
-                  ]),
-                send_to_worker: state.send_to_worker
-              };
-    
-  }
-}
-
-function useWebWorker(param) {
-  var match = React.useReducer(reducer, {
-        training: {
-          samples: /* array */[],
-          params: /* array */[]
-        },
-        to_predict: /* Idle */0,
-        send_to_worker: (function (param) {
-            return /* () */0;
-          })
-      });
-  var dispatch = match[1];
-  React.useEffect((function () {
-          var match = TrainingQueue$ReasonReactExamples.NISTClient.start((function (msg) {
-                  switch (msg.tag | 0) {
-                    case /* Ack */0 :
-                        return Curry._1(dispatch, /* SetSamples */Block.__(2, [msg[0]]));
-                    case /* Update */1 :
-                        return Curry._1(dispatch, /* Update */Block.__(1, [
-                                      msg[0],
-                                      msg[1],
-                                      msg[2]
-                                    ]));
-                    case /* Prediction */2 :
-                        return Curry._1(dispatch, /* Predicted */Block.__(3, [
-                                      msg[0],
-                                      msg[1]
-                                    ]));
-                    
-                  }
-                }));
-          Curry._1(dispatch, /* WorkerStarted */Block.__(0, [match[0]]));
-          return match[1];
-        }), ([]));
-  return match[0];
-}
-
-function DetectDigits$LambdaSlider(Props) {
-  var lambda = Props.lambda;
-  var onChange = Props.onChange;
-  return React.createElement("input", {
-              defaultValue: lambda,
-              onBlur: (function (v) {
-                  return Curry._1(onChange, Number(v.target.value));
-                })
-            });
-}
-
-var LambdaSlider = {
-  make: DetectDigits$LambdaSlider
-};
-
 function DetectDigits(Props) {
-  var match = React.useState((function () {
-          return 0.0;
-        }));
-  var setLambda = match[1];
-  var state = useWebWorker(/* () */0);
+  var match = MLEngine$ReasonReactExamples.use(/* () */0);
+  var dispatch = match[1];
+  var state = match[0];
   return React.createElement("span", undefined, React.createElement(DetectDigits$DigitGallery, {
                   samples: state.training.samples,
                   onSelect: (function (e) {
-                      return Curry._1(state.send_to_worker, /* Predict */Block.__(1, [e]));
+                      return Curry._1(dispatch, /* Predict */Block.__(1, [e]));
                     })
-                }), React.createElement("div", undefined, React.createElement(DetectDigits$LambdaSlider, {
-                      lambda: Pervasives.string_of_float(match[0]),
-                      onChange: (function (v) {
-                          return Curry._1(setLambda, (function (param) {
-                                        return v;
-                                      }));
-                        })
-                    }), React.createElement("button", undefined, "Start")), React.createElement(DetectDigits$ModelDebugging, {
+                }), React.createElement(DetectDigits$ModelDebugging, {
                   params: state.training.params
                 }), React.createElement(DetectDigits$Prediction, {
                   toPredict: state.to_predict,
                   onChange: (function (e) {
-                      return Curry._1(state.send_to_worker, /* Predict */Block.__(1, [e]));
+                      return Curry._1(dispatch, /* Predict */Block.__(1, [e]));
                     })
                 }));
 }
@@ -516,8 +407,5 @@ exports.LineChart = LineChart;
 exports.ModelDebugging = ModelDebugging;
 exports.Bar = Bar;
 exports.Prediction = Prediction;
-exports.reducer = reducer;
-exports.useWebWorker = useWebWorker;
-exports.LambdaSlider = LambdaSlider;
 exports.make = make;
 /* react Not a pure module */

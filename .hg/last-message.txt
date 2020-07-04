@@ -1,1 +1,0 @@
-[Nist] Apply regularization to log reg
