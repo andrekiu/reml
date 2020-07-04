@@ -1,4 +1,4 @@
-type input =
+type prediction =
   | Idle
   | Predicting(LinAlg.Matrix.t)
   | Predicted(LinAlg.Matrix.t, LinAlg.Matrix.t);
@@ -16,9 +16,10 @@ type training = {
 
 type state = {
   training,
-  to_predict: input,
+  prediction,
   send_to_worker: TrainingQueue.clientMessage => unit,
 };
+
 type action =
   | WorkerStarted(TrainingQueue.clientMessage => unit)
   | Update(LinAlg.Matrix.t, LinAlg.Matrix.t, float)
@@ -43,9 +44,10 @@ let reducer = (state, action: action) =>
           Array.append(state.training.params, [|{theta, cost, accuracy}|]),
       },
     }
-  | Predicted(sample, pred) =>
-    Js.log(pred);
-    {...state, to_predict: Predicted(sample, pred)};
+  | Predicted(sample, pred) => {
+      ...state,
+      prediction: Predicted(sample, pred),
+    }
   };
 
 let use = () => {
@@ -57,7 +59,7 @@ let use = () => {
           samples: [||],
           params: [||],
         },
-        to_predict: Idle,
+        prediction: Idle,
         send_to_worker: _ => (),
       },
     );
@@ -76,5 +78,5 @@ let use = () => {
     Some(cleanup);
   });
 
-  (state, state.send_to_worker);
+  (state, e => state.send_to_worker(TrainingQueue.Predict(e)));
 };

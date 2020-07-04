@@ -76,43 +76,36 @@ module WriteDigit = {
 };
 
 module DigitGallery = {
-  let shuffle = samples => {
-    Random.init(Js.Date.now()->int_of_float);
-    Belt.Array.shuffle(samples)
-    ->Array.sub(_, 0, min(Array.length(samples), 5 * 10));
-  };
+  let getShuffle = () =>
+    Memo.useStable(samples => {
+      Random.init(Js.Date.now()->int_of_float);
+      Belt.Array.shuffle(samples)
+      ->Array.sub(_, 0, min(Array.length(samples), 5 * 10));
+    });
+
   [@react.component]
   let make = (~samples: array(NIST.sample), ~onSelect) => {
-    let dims = (65, 65);
-    let (selection, setSelection) = React.useState(() => shuffle(samples));
-    React.useEffect1(
-      () => {
-        setSelection(s => Array.length(s) == 0 ? shuffle(samples) : s);
-        None;
-      },
-      [|samples|],
-    );
-    let views =
-      Array.map(
-        (e: NIST.sample) => {
-          <span onClick={_ => onSelect(e.digit)}>
-            <Digit dims value={e.digit} />
-          </span>
-        },
-        selection,
-      );
+    let (memoShuffle, setShuffle) = React.useState(getShuffle);
     <div>
       <div>
         <span> {React.string("Example of digits in the dataset")} </span>
         <span>
-          <button onClick={_ => setSelection(_ => shuffle(samples))}>
+          <button onClick={_ => setShuffle(_ => getShuffle())}>
             {React.string("Shuffle")}
           </button>
         </span>
       </div>
       <div
         style={ReactDOMRe.Style.make(~display="flex", ~flexFlow="wrap", ())}>
-        {React.array(views)}
+        {Array.map(
+           (e: NIST.sample) => {
+             <span onClick={_ => onSelect(e.digit)}>
+               <Digit dims=(65, 65) value={e.digit} />
+             </span>
+           },
+           memoShuffle(samples),
+         )
+         ->React.array}
       </div>
     </div>;
   };
@@ -239,7 +232,7 @@ module Prediction = {
   };
 
   [@react.component]
-  let make = (~toPredict: MLEngine.input, ~onChange) => {
+  let make = (~prediction: MLEngine.prediction, ~onChange) => {
     let (_, setDigit) = React.useState(() => None);
     <div>
       <div> {React.string("Hello I predict stuff")} </div>
@@ -249,7 +242,7 @@ module Prediction = {
           onChange(digit);
         }}
       />
-      {switch (toPredict) {
+      {switch (prediction) {
        | Predicted(sample, prediction) =>
          <div style={ReactDOMRe.Style.make(~display="flex", ())}>
            <div>
@@ -285,16 +278,11 @@ module Prediction = {
 
 [@react.component]
 let make = () => {
-  let (state, dispatch) = MLEngine.use();
+  let ({training, prediction}: MLEngine.state, genPrediction) =
+    MLEngine.use();
   <span>
-    <DigitGallery
-      samples={state.training.samples}
-      onSelect={e => dispatch(TrainingQueue.Predict(e))}
-    />
-    <ModelDebugging params={state.training.params} />
-    <Prediction
-      toPredict={state.to_predict}
-      onChange={e => dispatch(TrainingQueue.Predict(e))}
-    />
+    <DigitGallery samples={training.samples} onSelect=genPrediction />
+    <ModelDebugging params={training.params} />
+    <Prediction prediction onChange=genPrediction />
   </span>;
 };

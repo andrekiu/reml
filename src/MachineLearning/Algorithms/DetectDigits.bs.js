@@ -2,13 +2,13 @@
 
 var List = require("bs-platform/lib/js/list.js");
 var $$Array = require("bs-platform/lib/js/array.js");
-var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var Random = require("bs-platform/lib/js/random.js");
 var Belt_Array = require("bs-platform/lib/js/belt_Array.js");
 var Caml_primitive = require("bs-platform/lib/js/caml_primitive.js");
 var CamlinternalOO = require("bs-platform/lib/js/camlinternalOO.js");
+var Memo$ReasonReactExamples = require("./StateManagement/Memo.bs.js");
 var Canvas$ReasonReactExamples = require("../Canvas.bs.js");
 var LinAlg$ReasonReactExamples = require("../LinAlg.bs.js");
 var Stylus$ReasonReactExamples = require("../Stylus.bs.js");
@@ -124,47 +124,25 @@ var WriteDigit = {
   make: DetectDigits$WriteDigit
 };
 
-function shuffle(samples) {
-  Random.init(Date.now() | 0);
-  var __x = Belt_Array.shuffle(samples);
-  return $$Array.sub(__x, 0, Caml_primitive.caml_int_min(samples.length, 50));
+function getShuffle(param) {
+  return Memo$ReasonReactExamples.useStable((function (samples) {
+                Random.init(Date.now() | 0);
+                var __x = Belt_Array.shuffle(samples);
+                return $$Array.sub(__x, 0, Caml_primitive.caml_int_min(samples.length, 50));
+              }));
 }
 
 function DetectDigits$DigitGallery(Props) {
   var samples = Props.samples;
   var onSelect = Props.onSelect;
   var match = React.useState((function () {
-          return shuffle(samples);
+          return getShuffle(/* () */0);
         }));
-  var setSelection = match[1];
-  React.useEffect((function () {
-          Curry._1(setSelection, (function (s) {
-                  var match = s.length === 0;
-                  if (match) {
-                    return shuffle(samples);
-                  } else {
-                    return s;
-                  }
-                }));
-          return ;
-        }), /* array */[samples]);
-  var views = $$Array.map((function (e) {
-          return React.createElement("span", {
-                      onClick: (function (param) {
-                          return Curry._1(onSelect, e.digit);
-                        })
-                    }, React.createElement(DetectDigits$Digit, {
-                          dims: /* tuple */[
-                            65,
-                            65
-                          ],
-                          value: e.digit
-                        }));
-        }), match[0]);
+  var setShuffle = match[1];
   return React.createElement("div", undefined, React.createElement("div", undefined, React.createElement("span", undefined, "Example of digits in the dataset"), React.createElement("span", undefined, React.createElement("button", {
                           onClick: (function (param) {
-                              return Curry._1(setSelection, (function (param) {
-                                            return shuffle(samples);
+                              return Curry._1(setShuffle, (function (param) {
+                                            return getShuffle(/* () */0);
                                           }));
                             })
                         }, "Shuffle"))), React.createElement("div", {
@@ -172,11 +150,23 @@ function DetectDigits$DigitGallery(Props) {
                     display: "flex",
                     flexFlow: "wrap"
                   }
-                }, views));
+                }, $$Array.map((function (e) {
+                        return React.createElement("span", {
+                                    onClick: (function (param) {
+                                        return Curry._1(onSelect, e.digit);
+                                      })
+                                  }, React.createElement(DetectDigits$Digit, {
+                                        dims: /* tuple */[
+                                          65,
+                                          65
+                                        ],
+                                        value: e.digit
+                                      }));
+                      }), Curry._1(match[0], samples))));
 }
 
 var DigitGallery = {
-  shuffle: shuffle,
+  getShuffle: getShuffle,
   make: DetectDigits$DigitGallery
 };
 
@@ -321,19 +311,19 @@ function column(param) {
 }
 
 function DetectDigits$Prediction(Props) {
-  var toPredict = Props.toPredict;
+  var prediction = Props.prediction;
   var onChange = Props.onChange;
   var match = React.useState((function () {
           return ;
         }));
   var setDigit = match[1];
   var tmp;
-  if (typeof toPredict === "number" || !toPredict.tag) {
+  if (typeof prediction === "number" || !prediction.tag) {
     tmp = React.createElement("span", undefined);
   } else {
-    var prediction = toPredict[1];
+    var prediction$1 = prediction[1];
     var __x = $$Array.init(10, (function (ix) {
-            return LinAlg$ReasonReactExamples.Matrix.get(0, ix, prediction);
+            return LinAlg$ReasonReactExamples.Matrix.get(0, ix, prediction$1);
           }));
     tmp = React.createElement("div", {
           style: {
@@ -360,7 +350,7 @@ function DetectDigits$Prediction(Props) {
                 100,
                 100
               ],
-              value: toPredict[0]
+              value: prediction[0]
             }));
   }
   return React.createElement("div", undefined, React.createElement("div", undefined, "Hello I predict stuff"), React.createElement(DetectDigits$WriteDigit, {
@@ -380,20 +370,17 @@ var Prediction = {
 
 function DetectDigits(Props) {
   var match = MLEngine$ReasonReactExamples.use(/* () */0);
-  var dispatch = match[1];
-  var state = match[0];
+  var genPrediction = match[1];
+  var match$1 = match[0];
+  var training = match$1.training;
   return React.createElement("span", undefined, React.createElement(DetectDigits$DigitGallery, {
-                  samples: state.training.samples,
-                  onSelect: (function (e) {
-                      return Curry._1(dispatch, /* Predict */Block.__(1, [e]));
-                    })
+                  samples: training.samples,
+                  onSelect: genPrediction
                 }), React.createElement(DetectDigits$ModelDebugging, {
-                  params: state.training.params
+                  params: training.params
                 }), React.createElement(DetectDigits$Prediction, {
-                  toPredict: state.to_predict,
-                  onChange: (function (e) {
-                      return Curry._1(dispatch, /* Predict */Block.__(1, [e]));
-                    })
+                  prediction: match$1.prediction,
+                  onChange: genPrediction
                 }));
 }
 

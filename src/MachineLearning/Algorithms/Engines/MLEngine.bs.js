@@ -11,7 +11,7 @@ function reducer(state, action) {
     case /* WorkerStarted */0 :
         return {
                 training: state.training,
-                to_predict: state.to_predict,
+                prediction: state.prediction,
                 send_to_worker: action[0]
               };
     case /* Update */1 :
@@ -25,7 +25,7 @@ function reducer(state, action) {
                           accuracy: action[2]
                         }])
                 },
-                to_predict: state.to_predict,
+                prediction: state.prediction,
                 send_to_worker: state.send_to_worker
               };
     case /* SetSamples */2 :
@@ -35,17 +35,15 @@ function reducer(state, action) {
                   samples: action[0],
                   params: init$1.params
                 },
-                to_predict: state.to_predict,
+                prediction: state.prediction,
                 send_to_worker: state.send_to_worker
               };
     case /* Predicted */3 :
-        var pred = action[1];
-        console.log(pred);
         return {
                 training: state.training,
-                to_predict: /* Predicted */Block.__(1, [
+                prediction: /* Predicted */Block.__(1, [
                     action[0],
-                    pred
+                    action[1]
                   ]),
                 send_to_worker: state.send_to_worker
               };
@@ -59,7 +57,7 @@ function use(param) {
           samples: /* array */[],
           params: /* array */[]
         },
-        to_predict: /* Idle */0,
+        prediction: /* Idle */0,
         send_to_worker: (function (param) {
             return /* () */0;
           })
@@ -90,7 +88,9 @@ function use(param) {
         }), ([]));
   return /* tuple */[
           state,
-          state.send_to_worker
+          (function (e) {
+              return Curry._1(state.send_to_worker, /* Predict */Block.__(1, [e]));
+            })
         ];
 }
 
