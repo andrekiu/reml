@@ -1,0 +1,702 @@
+2020/02/01 10:53:06 andreq @(unknown) (11301) [command_finish]> init exited 0 after 0.18 seconds
+2020/02/01 10:53:08 andreq @(unknown) (11340) [command]> sl
+2020/02/01 10:53:08 andreq @0000000000000000000000000000000000000000 (11340) [command_finish]> sl exited 0 after 0.19 seconds
+2020/02/01 10:53:11 andreq @(unknown) (11385) [command]> diff
+2020/02/01 10:53:12 andreq @0000000000000000000000000000000000000000 (11385) [command_finish]> diff exited 0 after 0.46 seconds
+2020/02/01 10:53:14 andreq @(unknown) (11430) [command]> add .
+2020/02/01 10:53:14 andreq @0000000000000000000000000000000000000000 (11430) [command_finish]> add . exited 0 after 0.21 seconds
+2020/02/01 10:53:16 andreq @(unknown) (11470) [command]> sl
+2020/02/01 10:53:16 andreq @0000000000000000000000000000000000000000 (11470) [command_finish]> sl exited 0 after 0.19 seconds
+2020/02/01 10:53:54 andreq @(unknown) (11516) [command]> commit -m '[ML-React] Linear regression with cost convergence'
+2020/02/01 10:53:54 andreq @0000000000000000000000000000000000000000 (11516) [command_finish]> commit -m '[ML-React] Linear regression with cost convergence' exited 255 after 0.21 seconds
+2020/02/01 10:54:00 andreq @(unknown) (11558) [command]> config --edit
+2020/02/01 10:54:09 andreq @0000000000000000000000000000000000000000 (11558) [command_finish]> config --edit exited 0 after 9.61 seconds
+2020/02/01 10:54:11 andreq @(unknown) (11684) [command]> commit -m '[ML-React] Linear regression with cost convergence'
+2020/02/01 10:54:11 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (11684) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/01 10:54:11 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (11684) [command_finish]> commit -m '[ML-React] Linear regression with cost convergence' exited 0 after 0.29 seconds
+2020/02/01 10:54:13 andreq @(unknown) (11723) [command]> sl
+2020/02/01 10:54:13 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (11723) [command_finish]> sl exited 0 after 0.49 seconds
+2020/02/01 19:44:55 andreq @(unknown) (34122) [command]> diff
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> L src/Index.bs.js: mtime changed (1580583115 -> 1580614942)
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:44:55 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/01 19:44:56 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34122) [command_finish]> diff exited 0 after 0.90 seconds
+2020/02/01 19:46:17 andreq @(unknown) (34175) [command]> diff .re
+2020/02/01 19:46:17 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34175) [command_finish]> diff .re exited 0 after 0.47 seconds
+2020/02/01 19:46:22 andreq @(unknown) (34218) [command]> diff '*.re'
+2020/02/01 19:46:22 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34218) [command_finish]> diff '*.re' exited 0 after 0.47 seconds
+2020/02/01 19:46:33 andreq @(unknown) (34263) [command]> diff -I .re
+2020/02/01 19:46:33 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34263) [command_finish]> diff -I .re exited 0 after 0.47 seconds
+2020/02/01 19:46:36 andreq @(unknown) (34306) [command]> diff -I '*.re'
+2020/02/01 19:46:37 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34306) [command_finish]> diff -I '*.re' exited 0 after 0.46 seconds
+2020/02/01 19:46:45 andreq @(unknown) (34350) [command]> diff -I '*.re'
+2020/02/01 19:46:46 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34350) [command_finish]> diff -I '*.re' exited 0 after 0.46 seconds
+2020/02/01 19:47:02 andreq @(unknown) (34400) [command]> diff -I ML
+2020/02/01 19:47:02 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34400) [command_finish]> diff -I ML exited 0 after 0.45 seconds
+2020/02/01 19:47:04 andreq @(unknown) (34445) [command]> diff -I ML.re
+2020/02/01 19:47:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34445) [command_finish]> diff -I ML.re exited 0 after 0.46 seconds
+2020/02/01 19:47:15 andreq @(unknown) (34494) [command]> diff -X .js
+2020/02/01 19:47:15 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34494) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:47:15 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34494) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:47:15 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34494) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:47:15 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34494) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:47:15 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34494) [command_finish]> diff -X .js exited 0 after 0.51 seconds
+2020/02/01 19:48:24 andreq @(unknown) (34553) [command]> diff -X UNUSED_webpack.config.js watcher.js
+2020/02/01 19:48:24 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34553) [command_finish]> diff -X UNUSED_webpack.config.js watcher.js exited 0 after 0.50 seconds
+2020/02/01 19:48:42 andreq @(unknown) (34635) [command]> sl
+2020/02/01 19:48:43 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34635) [command_finish]> sl exited 0 after 0.50 seconds
+2020/02/01 19:48:44 andreq @(unknown) (34675) [command]> st
+2020/02/01 19:48:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34675) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:48:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34675) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:48:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34675) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:48:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34675) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:48:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34675) [command_finish]> st exited 0 after 0.47 seconds
+2020/02/01 19:49:04 andreq @(unknown) (34721) [command]> diff -X '*.js$'
+2020/02/01 19:49:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34721) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:49:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34721) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:49:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34721) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:49:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34721) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:49:04 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34721) [command_finish]> diff -X '*.js$' exited 0 after 0.53 seconds
+2020/02/01 19:49:44 andreq @(unknown) (34919) [command]> commit -m '[LinReg] add time trave and edit alpha'
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/ML.re: size changed (1334 -> 1422)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (7294 -> 12438)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/LinearRegression.re: size changed (3203 -> 5960)
+2020/02/01 19:49:44 andreq @9a6d627d79346959a782f8d72479bcec5808ca0f (34919) [status]> M src/MachineLearning/ML.bs.js: size changed (2906 -> 3147)
+2020/02/01 19:49:44 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (34919) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/01 19:49:44 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (34919) [command_finish]> commit -m '[LinReg] add time trave and edit alpha' exited 0 after 0.27 seconds
+2020/02/01 19:49:49 andreq @(unknown) (34963) [command]> sl
+2020/02/01 19:49:49 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (34963) [command_finish]> sl exited 0 after 0.50 seconds
+2020/02/01 19:49:51 andreq @(unknown) (35003) [command]> diff
+2020/02/01 19:49:51 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (35003) [command_finish]> diff exited 0 after 0.46 seconds
+2020/02/01 21:25:53 andreq @(unknown) (37624) [command]> diff
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> L src/Index.bs.js: mtime changed (1580614942 -> 1580621118)
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> M src/MachineLearning/ML.re: size changed (1422 -> 1403)
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (12438 -> 13018)
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> M src/MachineLearning/LinearRegression.re: size changed (5960 -> 6481)
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> M src/MachineLearning/ML.bs.js: size changed (3147 -> 3109)
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/01 21:25:53 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37624) [command_finish]> diff exited 0 after 0.87 seconds
+2020/02/01 21:26:47 andreq @(unknown) (37672) [command]> commit -m '[LinReg] add parsed prediction'
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/ML.re: size changed (1422 -> 1403)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (12438 -> 13018)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/LinearRegression.re: size changed (5960 -> 6481)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/ML.bs.js: size changed (3147 -> 3109)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/ML.re: size changed (1422 -> 1403)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (12438 -> 13018)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/LinearRegression.re: size changed (5960 -> 6481)
+2020/02/01 21:26:47 andreq @c3cdb36a3d0ebdfc4b6570eb64b2116683698243 (37672) [status]> M src/MachineLearning/ML.bs.js: size changed (3147 -> 3109)
+2020/02/01 21:26:47 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (37672) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/01 21:26:47 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (37672) [command_finish]> commit -m '[LinReg] add parsed prediction' exited 0 after 0.25 seconds
+2020/02/01 21:49:09 andreq @(unknown) (38130) [command]> diff
+2020/02/01 21:49:09 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (38130) [command_finish]> diff exited 0 after 0.76 seconds
+2020/02/01 21:50:50 andreq @(unknown) (38199) [command]> diff
+2020/02/01 21:50:50 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (38199) [command_finish]> diff exited 0 after 0.46 seconds
+2020/02/03 08:33:43 andreq @(unknown) (45436) [command]> diff --stat
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> L src/Index.bs.js: mtime changed (1580621118 -> 1580622733)
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> L src/MachineLearning/ML.re: mtime changed (1580620990 -> 1580622733)
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> L src/MachineLearning/LinearRegression.bs.js: mtime changed (1580621118 -> 1580622733)
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> C src/MachineLearning/LinearRegression.bs.js: checked in filesystem
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [status]> C src/MachineLearning/ML.bs.js: checked in filesystem
+2020/02/03 08:33:43 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45436) [command_finish]> diff --stat exited 0 after 0.70 seconds
+2020/02/03 08:33:53 andreq @(unknown) (45494) [command]> diff --stat '.^^^'
+2020/02/03 08:33:53 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45494) [command_finish]> diff --stat '.^^^' exited 0 after 0.51 seconds
+2020/02/03 08:34:00 andreq @(unknown) (45537) [command]> diff --stat -r '.^^^'
+2020/02/03 08:34:00 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45537) [command_finish]> diff --stat -r '.^^^' exited 255 after 0.20 seconds
+2020/02/03 08:34:03 andreq @(unknown) (45579) [command]> diff --stat -r '.^^'
+2020/02/03 08:34:03 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45579) [command_finish]> diff --stat -r '.^^' exited 0 after 0.47 seconds
+2020/02/03 08:44:45 andreq @(unknown) (45784) [command]> diff
+2020/02/03 08:44:45 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45784) [status]> L src/Index.bs.js: mtime changed (1580622733 -> 1580748219)
+2020/02/03 08:44:45 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45784) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (13018 -> 13019)
+2020/02/03 08:44:45 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45784) [status]> M src/MachineLearning/LinearRegression.re: size changed (6481 -> 6482)
+2020/02/03 08:44:45 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45784) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/03 08:44:45 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45784) [command_finish]> diff exited 0 after 0.54 seconds
+2020/02/03 08:45:22 andreq @(unknown) (45843) [command]> commit -m '[LinReg] fix centered entries in time travel list'
+2020/02/03 08:45:22 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45843) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (13018 -> 13019)
+2020/02/03 08:45:22 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45843) [status]> M src/MachineLearning/LinearRegression.re: size changed (6481 -> 6482)
+2020/02/03 08:45:22 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45843) [status]> M src/MachineLearning/LinearRegression.bs.js: size changed (13018 -> 13019)
+2020/02/03 08:45:22 andreq @9cc05e855ae843cfa182a3cb05d4097bf76bd239 (45843) [status]> M src/MachineLearning/LinearRegression.re: size changed (6481 -> 6482)
+2020/02/03 08:45:22 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (45843) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/03 08:45:22 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (45843) [command_finish]> commit -m '[LinReg] fix centered entries in time travel list' exited 0 after 0.27 seconds
+2020/02/03 10:27:30 andreq @(unknown) (58431) [command]> diff
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/Index.bs.js: size changed (1051 -> 1300)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> L src/ExampleStyles.bs.js: mtime changed (1580583083 -> 1580748414)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/Index.re: size changed (932 -> 1020)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> L src/MachineLearning/LinAlg.bs.js: mtime changed (1580583083 -> 1580748414)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1169 -> 1330)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/MachineLearning/ML.re: size changed (1403 -> 1402)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/MachineLearning/Stylus.re: size changed (802 -> 858)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/MachineLearning/DataGen.re: size changed (525 -> 1123)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> M src/MachineLearning/DataGen.bs.js: size changed (750 -> 1786)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> L src/MachineLearning/ML.bs.js: mtime changed (1580622733 -> 1580748551)
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> C src/BlinkingGreeting/BlinkingGreeting.bs.js: checked in filesystem
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> C src/ExampleStyles.bs.js: checked in filesystem
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [status]> C src/FetchedDogPictures/FetchedDogPictures.bs.js: checked in filesystem
+2020/02/03 10:27:31 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58431) [command_finish]> diff exited 0 after 0.89 seconds
+2020/02/03 10:28:10 andreq @(unknown) (58477) [command]> commit -m '[LogReg] add container and data generation '
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/Index.bs.js: size changed (1051 -> 1300)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/Index.re: size changed (932 -> 1020)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1169 -> 1330)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/ML.re: size changed (1403 -> 1402)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/Stylus.re: size changed (802 -> 858)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/DataGen.re: size changed (525 -> 1123)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/DataGen.bs.js: size changed (750 -> 1786)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/Index.bs.js: size changed (1051 -> 1300)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/Index.re: size changed (932 -> 1020)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1169 -> 1330)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/ML.re: size changed (1403 -> 1402)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/Stylus.re: size changed (802 -> 858)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/DataGen.re: size changed (525 -> 1123)
+2020/02/03 10:28:10 andreq @f5c899601b0459426d2bbb4ca1c84cca77214b8f (58477) [status]> M src/MachineLearning/DataGen.bs.js: size changed (750 -> 1786)
+2020/02/03 10:28:10 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (58477) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/03 10:28:10 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (58477) [command_finish]> commit -m '[LogReg] add container and data generation ' exited 0 after 0.27 seconds
+2020/02/03 10:28:12 andreq @(unknown) (58516) [command]> sl
+2020/02/03 10:28:12 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (58516) [command_finish]> sl exited 0 after 0.53 seconds
+2020/02/03 22:13:52 andreq @(unknown) (76284) [command]> diff
+2020/02/03 22:13:52 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (76284) [command_finish]> diff exited 0 after 0.80 seconds
+2020/02/03 22:37:54 andreq @(unknown) (85308) [command]> diff
+2020/02/03 22:37:54 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85308) [status]> L src/Index.bs.js: mtime changed (1580754430 -> 1580797980)
+2020/02/03 22:37:54 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85308) [status]> M src/MachineLearning/ML.re: size changed (1402 -> 1490)
+2020/02/03 22:37:54 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85308) [status]> M src/MachineLearning/ML.bs.js: size changed (3109 -> 3254)
+2020/02/03 22:37:54 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85308) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/03 22:37:55 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85308) [command_finish]> diff exited 0 after 0.53 seconds
+2020/02/03 22:38:07 andreq @(unknown) (85352) [command]> add .
+2020/02/03 22:38:07 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85352) [status]> M src/MachineLearning/ML.re: size changed (1402 -> 1490)
+2020/02/03 22:38:07 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85352) [status]> M src/MachineLearning/ML.bs.js: size changed (3109 -> 3254)
+2020/02/03 22:38:07 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85352) [command_finish]> add . exited 0 after 0.21 seconds
+2020/02/03 22:38:09 andreq @(unknown) (85394) [command]> diff
+2020/02/03 22:38:09 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85394) [status]> M src/MachineLearning/ML.re: size changed (1402 -> 1490)
+2020/02/03 22:38:09 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85394) [status]> M src/MachineLearning/ML.bs.js: size changed (3109 -> 3254)
+2020/02/03 22:38:10 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85394) [command_finish]> diff exited 0 after 0.49 seconds
+2020/02/03 22:39:49 andreq @(unknown) (85459) [command]> commit -m '[LogReg] add training loop and transform points to vectors'
+2020/02/03 22:39:49 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85459) [status]> M src/MachineLearning/ML.re: size changed (1402 -> 1490)
+2020/02/03 22:39:49 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85459) [status]> M src/MachineLearning/ML.bs.js: size changed (3109 -> 3254)
+2020/02/03 22:39:49 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85459) [status]> M src/MachineLearning/ML.re: size changed (1402 -> 1490)
+2020/02/03 22:39:49 andreq @2ae0e74db0a4699ec9803885038ca479e7a6d4fa (85459) [status]> M src/MachineLearning/ML.bs.js: size changed (3109 -> 3254)
+2020/02/03 22:39:49 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (85459) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/03 22:39:49 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (85459) [command_finish]> commit -m '[LogReg] add training loop and transform points to vectors' exited 0 after 0.29 seconds
+2020/02/03 22:39:53 andreq @(unknown) (85501) [command]> diff
+2020/02/03 22:39:53 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (85501) [command_finish]> diff exited 0 after 0.46 seconds
+2020/02/03 22:39:54 andreq @(unknown) (85541) [command]> sl
+2020/02/03 22:39:55 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (85541) [command_finish]> sl exited 0 after 0.52 seconds
+2020/02/04 10:14:05 andreq @(unknown) (3063) [command]> diff
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> L src/Index.bs.js: mtime changed (1580797980 -> 1580840009)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> L src/MachineLearning/Canvas.re: mtime changed (1580583102 -> 1580837118)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> L src/MachineLearning/Canvas.bs.js: mtime changed (1580754404 -> 1580837118)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> C src/MachineLearning/Algorithms/LinearRegression.bs.js: checked in filesystem
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [status]> C src/MachineLearning/Canvas.bs.js: checked in filesystem
+2020/02/04 10:14:05 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3063) [command_finish]> diff exited 0 after 0.80 seconds
+2020/02/04 10:14:08 andreq @(unknown) (3107) [command]> st
+2020/02/04 10:14:08 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3107) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:08 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3107) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:08 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3107) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:08 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3107) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:09 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3107) [command_finish]> st exited 0 after 0.53 seconds
+2020/02/04 10:14:11 andreq @(unknown) (3150) [command]> add .
+2020/02/04 10:14:11 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3150) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:11 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3150) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:11 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3150) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:11 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3150) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:11 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3150) [command_finish]> add . exited 0 after 0.20 seconds
+2020/02/04 10:14:12 andreq @(unknown) (3189) [command]> st
+2020/02/04 10:14:12 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3189) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:12 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3189) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:12 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3189) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:12 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3189) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:13 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3189) [command_finish]> st exited 0 after 0.56 seconds
+2020/02/04 10:14:23 andreq @(unknown) (3241) [command]> add .
+2020/02/04 10:14:23 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3241) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:23 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3241) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:23 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3241) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:23 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3241) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:23 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3241) [command_finish]> add . exited 0 after 0.20 seconds
+2020/02/04 10:14:24 andreq @(unknown) (3280) [command]> st
+2020/02/04 10:14:24 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3280) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:24 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3280) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:24 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3280) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:24 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3280) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:24 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3280) [command_finish]> st exited 0 after 0.51 seconds
+2020/02/04 10:14:37 andreq @(unknown) (3324) [command]> rm MachineLearning/LinearRegression.bs.js MachineLearning/LinearRegression.re
+2020/02/04 10:14:37 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3324) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:37 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3324) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:37 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3324) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:37 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3324) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:37 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3324) [command_finish]> rm MachineLearning/LinearRegression.bs.js MachineLearning/LinearRegression.re exited 0 after 0.22 seconds
+2020/02/04 10:14:39 andreq @(unknown) (3363) [command]> sl
+2020/02/04 10:14:39 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3363) [command_finish]> sl exited 0 after 0.56 seconds
+2020/02/04 10:14:42 andreq @(unknown) (3406) [command]> st
+2020/02/04 10:14:42 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3406) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:14:42 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3406) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:14:42 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3406) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:14:42 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3406) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:14:42 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3406) [command_finish]> st exited 0 after 0.51 seconds
+2020/02/04 10:15:20 andreq @(unknown) (3453) [command]> commit -m '[LogReg] add gradient descent and viz decision boundary'
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/ML.re: size changed (1490 -> 1832)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/ML.bs.js: size changed (3254 -> 3817)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (4071 -> 5341)
+2020/02/04 10:15:20 andreq @b9c3742d69a22c3ac4cdd81f24a1b310ce2a88c5 (3453) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (1801 -> 2331)
+2020/02/04 10:15:20 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (3453) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/04 10:15:20 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (3453) [command_finish]> commit -m '[LogReg] add gradient descent and viz decision boundary' exited 0 after 0.28 seconds
+2020/02/08 14:05:24 andreq @(unknown) (96456) [command]> diff Stylus
+2020/02/08 14:05:25 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96456) [command_finish]> diff Stylus exited 0 after 0.67 seconds
+2020/02/08 14:05:29 andreq @(unknown) (96501) [command]> diff
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> L src/Index.bs.js: mtime changed (1580840009 -> 1581199510)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1352)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> L src/MachineLearning/Canvas.bs.js: mtime changed (1580837118 -> 1581199510)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 5939)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13340)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2613)
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [status]> C src/MachineLearning/Canvas.bs.js: checked in filesystem
+2020/02/08 14:05:29 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96501) [command_finish]> diff exited 0 after 0.58 seconds
+2020/02/08 14:06:14 andreq @(unknown) (96577) [command]> diff src/MachineLearning/Stylus.re
+2020/02/08 14:06:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96577) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 14:06:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96577) [command_finish]> diff src/MachineLearning/Stylus.re exited 0 after 0.54 seconds
+2020/02/08 14:08:10 andreq @(unknown) (96995) [command]> diff
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> L src/Index.bs.js: mtime changed (1581199510 -> 1581199671)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> L src/MachineLearning/Canvas.bs.js: mtime changed (1581199510 -> 1581199626)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6024)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13340)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2633)
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [status]> C src/MachineLearning/Canvas.bs.js: checked in filesystem
+2020/02/08 14:08:10 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (96995) [command_finish]> diff exited 0 after 0.58 seconds
+2020/02/08 14:08:13 andreq @(unknown) (97039) [command]> diff src/MachineLearning/Stylus.re
+2020/02/08 14:08:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (97039) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 14:08:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (97039) [command_finish]> diff src/MachineLearning/Stylus.re exited 0 after 0.53 seconds
+2020/02/08 18:19:12 andreq @(unknown) (7838) [command]> diff
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/Index.bs.js: size changed (1300 -> 1563)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> L src/ExampleStyles.bs.js: mtime changed (1580748414 -> 1581202664)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/Index.re: size changed (1020 -> 1077)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> L src/MachineLearning/DataGen.bs.js: mtime changed (1580753554 -> 1581202664)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> L src/MachineLearning/Canvas.bs.js: mtime changed (1581199626 -> 1581202664)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6658)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13090)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Algorithms/LinearRegression.re: size changed (6486 -> 6494)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2999)
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> C src/BlinkingGreeting/BlinkingGreeting.bs.js: checked in filesystem
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> C src/ExampleStyles.bs.js: checked in filesystem
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [status]> C src/FetchedDogPictures/FetchedDogPictures.bs.js: checked in filesystem
+2020/02/08 18:19:12 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7838) [command_finish]> diff exited 0 after 0.61 seconds
+2020/02/08 18:19:14 andreq @(unknown) (7882) [command]> st
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/Index.bs.js: size changed (1300 -> 1563)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/Index.re: size changed (1020 -> 1077)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6658)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13090)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Algorithms/LinearRegression.re: size changed (6486 -> 6494)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2999)
+2020/02/08 18:19:14 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7882) [command_finish]> st exited 0 after 0.53 seconds
+2020/02/08 18:19:16 andreq @(unknown) (7925) [command]> add .
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/Index.bs.js: size changed (1300 -> 1563)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/Index.re: size changed (1020 -> 1077)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6658)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13090)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Algorithms/LinearRegression.re: size changed (6486 -> 6494)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2999)
+2020/02/08 18:19:16 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7925) [command_finish]> add . exited 0 after 0.23 seconds
+2020/02/08 18:19:46 andreq @(unknown) (7979) [command]> commit -m '[LogReg] Multi Classifier and StartStop Viz'
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/Index.bs.js: size changed (1300 -> 1563)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/Index.re: size changed (1020 -> 1077)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6658)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13090)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LinearRegression.re: size changed (6486 -> 6494)
+2020/02/08 18:19:46 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2999)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/Index.bs.js: size changed (1300 -> 1563)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/Index.re: size changed (1020 -> 1077)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (4861 -> 5517)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1330 -> 1419)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/ML.re: size changed (1832 -> 2952)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Stylus.re: size changed (858 -> 876)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/LinAlg.re: size changed (1925 -> 2177)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/ML.bs.js: size changed (3817 -> 5437)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (5341 -> 6658)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LinearRegression.bs.js: size changed (13046 -> 13090)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LinearRegression.re: size changed (6486 -> 6494)
+2020/02/08 18:19:47 andreq @fb4bec5e1b6529309dd92d281eb1ddc30ccf2862 (7979) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2331 -> 2999)
+2020/02/08 18:19:47 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (7979) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/08 18:19:47 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (7979) [command_finish]> commit -m '[LogReg] Multi Classifier and StartStop Viz' exited 0 after 0.28 seconds
+2020/02/09 19:02:38 andreq @(unknown) (40643) [command]> st
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> M src/Index.bs.js: size changed (1563 -> 1768)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> L src/ExampleStyles.bs.js: mtime changed (1581202664 -> 1581298616)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> M src/Index.re: size changed (1077 -> 1137)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> L src/MachineLearning/LinAlg.bs.js: mtime changed (1581202664 -> 1581298616)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1419 -> 1737)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> M src/MachineLearning/Stylus.re: size changed (876 -> 1124)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> L src/MachineLearning/DataGen.bs.js: mtime changed (1581202664 -> 1581298616)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> M src/FetchedDogPictures/FetchedDogPictures.re: size changed (2295 -> 2294)
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> C src/BlinkingGreeting/BlinkingGreeting.bs.js: checked in filesystem
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> C src/ExampleStyles.bs.js: checked in filesystem
+2020/02/09 19:02:38 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [status]> C src/FetchedDogPictures/FetchedDogPictures.bs.js: checked in filesystem
+2020/02/09 19:02:39 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40643) [command_finish]> st exited 0 after 0.81 seconds
+2020/02/09 19:02:46 andreq @(unknown) (40694) [command]> add .
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [status]> M src/Index.bs.js: size changed (1563 -> 1768)
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [status]> M src/Index.re: size changed (1077 -> 1137)
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1419 -> 1737)
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [status]> M src/MachineLearning/Stylus.re: size changed (876 -> 1124)
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [status]> M src/FetchedDogPictures/FetchedDogPictures.re: size changed (2295 -> 2294)
+2020/02/09 19:02:46 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40694) [command_finish]> add . exited 0 after 0.19 seconds
+2020/02/09 19:03:04 andreq @(unknown) (40751) [command]> commit -m '[NIST] Read digits from binary and render in a canvas'
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/Index.bs.js: size changed (1563 -> 1768)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/Index.re: size changed (1077 -> 1137)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1419 -> 1737)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/MachineLearning/Stylus.re: size changed (876 -> 1124)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/FetchedDogPictures/FetchedDogPictures.re: size changed (2295 -> 2294)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/Index.bs.js: size changed (1563 -> 1768)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/Index.re: size changed (1077 -> 1137)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/MachineLearning/Stylus.bs.js: size changed (1419 -> 1737)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/MachineLearning/Stylus.re: size changed (876 -> 1124)
+2020/02/09 19:03:04 andreq @cc63e7bea69d46c4719aa87446c4191ccab8a403 (40751) [status]> M src/FetchedDogPictures/FetchedDogPictures.re: size changed (2295 -> 2294)
+2020/02/09 19:03:05 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (40751) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/09 19:03:05 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (40751) [command_finish]> commit -m '[NIST] Read digits from binary and render in a canvas' exited 0 after 0.70 seconds
+2020/02/09 21:50:42 andreq @(unknown) (51917) [command]> diff
+2020/02/09 21:50:42 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51917) [status]> L src/Index.bs.js: mtime changed (1581303216 -> 1581313799)
+2020/02/09 21:50:42 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51917) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (1778 -> 2981)
+2020/02/09 21:50:42 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51917) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (3027 -> 5412)
+2020/02/09 21:50:42 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51917) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/09 21:50:42 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51917) [command_finish]> diff exited 0 after 0.83 seconds
+2020/02/09 21:50:53 andreq @(unknown) (51970) [command]> diff
+2020/02/09 21:50:54 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51970) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (1778 -> 2981)
+2020/02/09 21:50:54 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51970) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (3027 -> 5412)
+2020/02/09 21:50:54 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (51970) [command_finish]> diff exited 0 after 0.50 seconds
+2020/02/09 21:50:55 andreq @(unknown) (52014) [command]> st
+2020/02/09 21:50:55 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52014) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (1778 -> 2981)
+2020/02/09 21:50:55 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52014) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (3027 -> 5412)
+2020/02/09 21:50:56 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52014) [command_finish]> st exited 0 after 0.47 seconds
+2020/02/09 21:51:22 andreq @(unknown) (52069) [command]> commit -m '[NIST] load labels and randomly display a digit and label'
+2020/02/09 21:51:22 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52069) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (1778 -> 2981)
+2020/02/09 21:51:22 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52069) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (3027 -> 5412)
+2020/02/09 21:51:22 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52069) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (1778 -> 2981)
+2020/02/09 21:51:22 andreq @5ea93a8f0564c4f69eed52f8355cc151c3772a97 (52069) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (3027 -> 5412)
+2020/02/09 21:51:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (52069) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/09 21:51:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (52069) [command_finish]> commit -m '[NIST] load labels and randomly display a digit and label' exited 0 after 0.25 seconds
+2020/02/12 18:14:51 andreq @(unknown) (19084) [command]> diff
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> L src/Index.bs.js: mtime changed (1581313799 -> 1581559809)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 7980)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3816)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3860)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7126)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> L src/MachineLearning/Algorithms/LinearRegression.bs.js: mtime changed (1581303105 -> 1581559809)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 4411)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 7808)
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [status]> C src/MachineLearning/Algorithms/LinearRegression.bs.js: checked in filesystem
+2020/02/12 18:14:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (19084) [command_finish]> diff exited 0 after 0.81 seconds
+2020/02/12 20:26:08 andreq @(unknown) (41566) [command]> diff
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> L src/Index.bs.js: mtime changed (1581559809 -> 1581567623)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> L src/Index.re: mtime changed (1581301000 -> 1581561273)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> L src/MachineLearning/Algorithms/LinearRegression.bs.js: mtime changed (1581559809 -> 1581567623)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> C src/Index.re: checked in filesystem
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [status]> C src/MachineLearning/Algorithms/LinearRegression.bs.js: checked in filesystem
+2020/02/12 20:26:08 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41566) [command_finish]> diff exited 0 after 0.93 seconds
+2020/02/12 20:26:22 andreq @(unknown) (41654) [command]> st
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:26:22 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41654) [command_finish]> st exited 0 after 0.50 seconds
+2020/02/12 20:26:51 andreq @(unknown) (41716) [command]> st
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:26:51 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:26:52 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41716) [command_finish]> st exited 0 after 0.77 seconds
+2020/02/12 20:27:00 andreq @(unknown) (41763) [command]> st
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:27:00 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:27:01 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41763) [command_finish]> st exited 0 after 0.58 seconds
+2020/02/12 20:27:27 andreq @(unknown) (41807) [command]> commit -m '[NIST] add UI to have handwritten detection'
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Canvas.re: size changed (1290 -> 3045)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/LinAlg.bs.js: size changed (5517 -> 8014)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/ML.re: size changed (2952 -> 3781)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/LinAlg.re: size changed (2177 -> 3895)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/ML.bs.js: size changed (5437 -> 7089)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Canvas.bs.js: size changed (2580 -> 6251)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6658 -> 6669)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (2981 -> 5240)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (2999 -> 3007)
+2020/02/12 20:27:27 andreq @228bdf1dc3a3a1bca51cf9dcdd49c4efa999f29f (41807) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (5412 -> 10491)
+2020/02/12 20:27:27 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (41807) [pythonhook]> pythonhook-commit: edenscm.hgext.remotefilelog.wcpprefetch finished in 0.00 seconds
+2020/02/12 20:27:27 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (41807) [command_finish]> commit -m '[NIST] add UI to have handwritten detection' exited 0 after 0.29 seconds
+2020/02/18 09:58:47 andreq @(unknown) (50844) [command]> diff
+2020/02/18 09:58:47 andreq @(unknown) (50844) [visibility]> read 0 heads: 
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M index.html: size changed (812 -> 850)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> L src/Index.bs.js: mtime changed (1581567623 -> 1582047868)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> L src/ExampleStyles.bs.js: mtime changed (1581298616 -> 1582009326)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Canvas.re: size changed (3045 -> 3706)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> L src/MachineLearning/LinAlg.bs.js: mtime changed (1581561753 -> 1582009326)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/ML.re: size changed (3781 -> 4461)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/ML.bs.js: size changed (7089 -> 8458)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Canvas.bs.js: size changed (6251 -> 7962)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6669 -> 6676)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5240 -> 5704)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (3007 -> 3012)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10491 -> 10694)
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> C src/BlinkingGreeting/BlinkingGreeting.bs.js: checked in filesystem
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> C src/ExampleStyles.bs.js: checked in filesystem
+2020/02/18 09:58:47 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [status]> C src/FetchedDogPictures/FetchedDogPictures.bs.js: checked in filesystem
+2020/02/18 09:58:49 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50844) [command_finish]> diff exited -1 after 2.10 seconds
+2020/02/18 09:58:50 andreq @(unknown) (50887) [command]> st
+2020/02/18 09:58:50 andreq @(unknown) (50887) [visibility]> read 0 heads: 
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M index.html: size changed (812 -> 850)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Canvas.re: size changed (3045 -> 3706)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/ML.re: size changed (3781 -> 4461)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/ML.bs.js: size changed (7089 -> 8458)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Canvas.bs.js: size changed (6251 -> 7962)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6669 -> 6676)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5240 -> 5704)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (3007 -> 3012)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10491 -> 10694)
+2020/02/18 09:58:50 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50887) [command_finish]> st exited 0 after 0.50 seconds
+2020/02/18 09:58:56 andreq @(unknown) (50943) [command]> add .
+2020/02/18 09:58:56 andreq @(unknown) (50943) [visibility]> read 0 heads: 
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M index.html: size changed (812 -> 850)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Canvas.re: size changed (3045 -> 3706)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/ML.re: size changed (3781 -> 4461)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/ML.bs.js: size changed (7089 -> 8458)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Canvas.bs.js: size changed (6251 -> 7962)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6669 -> 6676)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5240 -> 5704)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (3007 -> 3012)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10491 -> 10694)
+2020/02/18 09:58:56 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (50943) [command_finish]> add . exited 0 after 0.21 seconds
+2020/02/18 09:59:29 andreq @(unknown) (51009) [command]> commit -m '[Rework] add service worker for training, revamp NIST UI'
+2020/02/18 09:59:29 andreq @(unknown) (51009) [visibility]> read 0 heads: 
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M index.html: size changed (812 -> 850)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Canvas.re: size changed (3045 -> 3706)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/ML.re: size changed (3781 -> 4461)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/ML.bs.js: size changed (7089 -> 8458)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Canvas.bs.js: size changed (6251 -> 7962)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6669 -> 6676)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5240 -> 5704)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (3007 -> 3012)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10491 -> 10694)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M index.html: size changed (812 -> 850)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Canvas.re: size changed (3045 -> 3706)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/ML.re: size changed (3781 -> 4461)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/ML.bs.js: size changed (7089 -> 8458)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Canvas.bs.js: size changed (6251 -> 7962)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/LogisticRegression.bs.js: size changed (6669 -> 6676)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5240 -> 5704)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/LogisticRegression.re: size changed (3007 -> 3012)
+2020/02/18 09:59:29 andreq @63cf7eef07084655beabffb30177389a89eb2e81 (51009) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10491 -> 10694)
+2020/02/18 09:59:29 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (51009) [command_finish]> commit -m '[Rework] add service worker for training, revamp NIST UI' exited 0 after 0.34 seconds
+2020/02/18 10:25:45 andreq @(unknown) (51754) [command]> sl
+2020/02/18 10:25:45 andreq @(unknown) (51754) [visibility]> read 0 heads: 
+2020/02/18 10:25:45 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (51754) [command_finish]> sl exited 0 after 0.56 seconds
+2020/02/19 09:13:43 andreq @(unknown) (3585) [command]> diff
+2020/02/19 09:13:43 andreq @(unknown) (3585) [visibility]> read 0 heads: 
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> L src/Index.bs.js: mtime changed (1582047868 -> 1582131992)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/NISTWorker.re: size changed (3874 -> 4550)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/NISTWorker.bs.js: size changed (5705 -> 6978)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/Canvas.re: size changed (3706 -> 3649)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/ML.re: size changed (4461 -> 4448)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/ML.bs.js: size changed (8458 -> 8483)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/Canvas.bs.js: size changed (7962 -> 7908)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> L src/MachineLearning/Algorithms/LogisticRegression.bs.js: mtime changed (1582009340 -> 1582131992)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> L src/MachineLearning/Algorithms/LinearRegression.bs.js: mtime changed (1582009341 -> 1582131992)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5704 -> 7722)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10694 -> 14477)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> M src/MachineLearning/UI/TrainingQueue.re: size changed (1038 -> 1055)
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> C src/MachineLearning/Algorithms/LinearRegression.bs.js: checked in filesystem
+2020/02/19 09:13:43 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [status]> C src/MachineLearning/Algorithms/LogisticRegression.bs.js: checked in filesystem
+2020/02/19 09:13:47 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3585) [command_finish]> diff exited -1 after 4.99 seconds
+2020/02/19 09:13:48 andreq @(unknown) (3649) [command]> st
+2020/02/19 09:13:48 andreq @(unknown) (3649) [visibility]> read 0 heads: 
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/NISTWorker.re: size changed (3874 -> 4550)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/NISTWorker.bs.js: size changed (5705 -> 6978)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/Canvas.re: size changed (3706 -> 3649)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/ML.re: size changed (4461 -> 4448)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/ML.bs.js: size changed (8458 -> 8483)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/Canvas.bs.js: size changed (7962 -> 7908)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5704 -> 7722)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10694 -> 14477)
+2020/02/19 09:13:48 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [status]> M src/MachineLearning/UI/TrainingQueue.re: size changed (1038 -> 1055)
+2020/02/19 09:13:49 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3649) [command_finish]> st exited 0 after 0.48 seconds
+2020/02/19 09:14:16 andreq @(unknown) (3696) [command]> commit -m '[NIST] refactor UI, add sparklines and implement prediction messages'
+2020/02/19 09:14:16 andreq @(unknown) (3696) [visibility]> read 0 heads: 
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/NISTWorker.re: size changed (3874 -> 4550)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/NISTWorker.bs.js: size changed (5705 -> 6978)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Canvas.re: size changed (3706 -> 3649)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/ML.re: size changed (4461 -> 4448)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/ML.bs.js: size changed (8458 -> 8483)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Canvas.bs.js: size changed (7962 -> 7908)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5704 -> 7722)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10694 -> 14477)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/UI/TrainingQueue.re: size changed (1038 -> 1055)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/NISTWorker.re: size changed (3874 -> 4550)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/NISTWorker.bs.js: size changed (5705 -> 6978)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Canvas.re: size changed (3706 -> 3649)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/ML.re: size changed (4461 -> 4448)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/ML.bs.js: size changed (8458 -> 8483)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Canvas.bs.js: size changed (7962 -> 7908)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (5704 -> 7722)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (10694 -> 14477)
+2020/02/19 09:14:16 andreq @74955b788b8da9276be1da9f573ddc25dfe2eeb4 (3696) [status]> M src/MachineLearning/UI/TrainingQueue.re: size changed (1038 -> 1055)
+2020/02/19 09:14:16 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (3696) [command_finish]> commit -m '[NIST] refactor UI, add sparklines and implement prediction messages' exited 0 after 0.28 seconds
+2020/02/19 09:14:18 andreq @(unknown) (3739) [command]> sl
+2020/02/19 09:14:18 andreq @(unknown) (3739) [visibility]> read 0 heads: 
+2020/02/19 09:14:18 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (3739) [command_finish]> sl exited 0 after 0.54 seconds
+2020/02/19 22:25:01 andreq @(unknown) (32634) [command]> diff
+2020/02/19 22:25:01 andreq @(unknown) (32634) [visibility]> read 0 heads: 
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> L src/Index.bs.js: mtime changed (1582131992 -> 1582177365)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/NISTWorker.re: size changed (4550 -> 4639)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/NISTWorker.bs.js: size changed (6978 -> 7170)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/MachineLearning/ML.re: size changed (4448 -> 4513)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/MachineLearning/ML.bs.js: size changed (8483 -> 8609)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> L src/MachineLearning/Algorithms/LogisticRegression.bs.js: mtime changed (1582131992 -> 1582177365)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> L src/MachineLearning/Algorithms/LinearRegression.bs.js: mtime changed (1582131992 -> 1582177365)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (7722 -> 9457)
+2020/02/19 22:25:01 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (14477 -> 17395)
+2020/02/19 22:25:02 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> C src/Index.bs.js: checked in filesystem
+2020/02/19 22:25:02 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> C src/MachineLearning/Algorithms/LinearRegression.bs.js: checked in filesystem
+2020/02/19 22:25:02 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [status]> C src/MachineLearning/Algorithms/LogisticRegression.bs.js: checked in filesystem
+2020/02/19 22:25:02 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32634) [command_finish]> diff exited 0 after 0.88 seconds
+2020/02/19 22:25:04 andreq @(unknown) (32679) [command]> st
+2020/02/19 22:25:04 andreq @(unknown) (32679) [visibility]> read 0 heads: 
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/NISTWorker.re: size changed (4550 -> 4639)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/NISTWorker.bs.js: size changed (6978 -> 7170)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/MachineLearning/ML.re: size changed (4448 -> 4513)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/MachineLearning/ML.bs.js: size changed (8483 -> 8609)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (7722 -> 9457)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (14477 -> 17395)
+2020/02/19 22:25:04 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32679) [command_finish]> st exited 0 after 0.50 seconds
+2020/02/19 22:25:29 andreq @(unknown) (32723) [command]> commit -m '[Nist] Apply regularization to log reg'
+2020/02/19 22:25:29 andreq @(unknown) (32723) [visibility]> read 0 heads: 
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/NISTWorker.re: size changed (4550 -> 4639)
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/NISTWorker.bs.js: size changed (6978 -> 7170)
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/ML.re: size changed (4448 -> 4513)
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/ML.bs.js: size changed (8483 -> 8609)
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (7722 -> 9457)
+2020/02/19 22:25:29 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (14477 -> 17395)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/NISTWorker.re: size changed (4550 -> 4639)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/NISTWorker.bs.js: size changed (6978 -> 7170)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/ML.re: size changed (4448 -> 4513)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/ML.bs.js: size changed (8483 -> 8609)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/Algorithms/DetectDigits.re: size changed (7722 -> 9457)
+2020/02/19 22:25:30 andreq @a71ad7a1e6bfd72dfb6d72fa73805681e9fecf7b (32723) [status]> M src/MachineLearning/Algorithms/DetectDigits.bs.js: size changed (14477 -> 17395)
+2020/02/19 22:25:30 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (32723) [command_finish]> commit -m '[Nist] Apply regularization to log reg' exited 0 after 0.26 seconds
+2020/07/03 17:15:48 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51122) [command_finish]> st exited -1 after 0.96 seconds
+2020/07/03 17:16:48 andreq @(unknown) (51245) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:16:48 andreq @(unknown) (51245) [visibility]> read 0 heads: 
+2020/07/03 17:16:48 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51245) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.24 seconds
+2020/07/03 17:17:16 andreq @(unknown) (51350) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:17:16 andreq @(unknown) (51350) [visibility]> read 0 heads: 
+2020/07/03 17:17:16 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51350) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.30 seconds
+2020/07/03 17:17:56 andreq @(unknown) (51544) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:17:57 andreq @(unknown) (51544) [visibility]> read 0 heads: 
+2020/07/03 17:17:57 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51544) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.24 seconds
+2020/07/03 17:20:26 andreq @(unknown) (51689) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:20:26 andreq @(unknown) (51689) [visibility]> read 0 heads: 
+2020/07/03 17:20:26 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51689) [status]> M .gitignore: size changed (80 -> 88)
+2020/07/03 17:20:26 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51689) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.22 seconds
+2020/07/03 17:20:51 andreq @(unknown) (51799) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:20:51 andreq @(unknown) (51799) [visibility]> read 0 heads: 
+2020/07/03 17:20:51 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51799) [status]> M .gitignore: size changed (80 -> 88)
+2020/07/03 17:20:51 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51799) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.24 seconds
+2020/07/03 17:20:59 andreq @(unknown) (51868) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:20:59 andreq @(unknown) (51868) [visibility]> read 0 heads: 
+2020/07/03 17:20:59 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51868) [status]> M .gitignore: size changed (80 -> 92)
+2020/07/03 17:20:59 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51868) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.22 seconds
+2020/07/03 17:21:20 andreq @(unknown) (51965) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:21:20 andreq @(unknown) (51965) [visibility]> read 0 heads: 
+2020/07/03 17:21:20 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51965) [status]> M .gitignore: size changed (80 -> 92)
+2020/07/03 17:21:20 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (51965) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.24 seconds
+2020/07/03 17:21:25 andreq @(unknown) (52033) [command]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore
+2020/07/03 17:21:25 andreq @(unknown) (52033) [visibility]> read 0 heads: 
+2020/07/03 17:21:25 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (52033) [status]> M .gitignore: size changed (80 -> 93)
+2020/07/03 17:21:25 andreq @730fb33c170e9385ef9619865050e85ac8b5853a (52033) [command_finish]> diff '--color=never' --config 'aliases.diff=' --nodates -U0 -- /Users/andreq/github/reason-react/.gitignore exited 0 after 0.23 seconds
