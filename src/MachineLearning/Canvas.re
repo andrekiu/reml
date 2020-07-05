@@ -27,119 +27,115 @@ let scale = (points, dims) => {
   );
 };
 
-type state = {
-  presed: bool,
-  pixels: list((float, float)),
-};
-
-type action =
-  | MouseDown(ReactEvent.Mouse.t)
-  | MouseUp(ReactEvent.Mouse.t)
-  | MouseMove(ReactEvent.Mouse.t)
-  | Clear;
-
-let noop = (state, _) => state;
-
-let getOffset = e => {
-  let native = ReactEvent.Mouse.nativeEvent(e);
-  let p = (float_of_int(native##offsetX), float_of_int(native##offsetY));
-  let d = List.map(float_of_int, [0, (-1), 1, (-2), 2]);
-  let append = (sum: list((float, float)), (x, y)) => [
-    (fst(p) +. x, snd(p) +. y),
-    ...sum,
-  ];
-  List.fold_left(
-    (sum, dx) =>
-      List.fold_left((sum, dy) => append(sum, (dx, dy)), sum, d),
-    [],
-    d,
-  );
-};
-let reducer = (state: state, action: action): state => {
-  switch (action) {
-  | MouseDown(e) => {presed: true, pixels: getOffset(e) @ state.pixels}
-  | MouseMove(e) =>
-    state.presed
-      ? {presed: true, pixels: getOffset(e) @ state.pixels} : state
-  | MouseUp(_) => {presed: false, pixels: state.pixels}
-  | Clear => {presed: false, pixels: []}
-  };
-};
-
-let persistEventAnd = (e, fn) => {
-  ReactEvent.Mouse.persist(e);
-  fn(e);
-};
-
-[@react.component]
-let make =
-    (
-      ~children,
-      ~dims,
-      ~writeble: bool=false,
-      ~onChange=(_: list((float, float))) => {()},
-    ) => {
-  let (state, dispatch) =
-    React.useReducer(writeble ? reducer : noop, {presed: false, pixels: []});
+let useSyncCanvas = (fn, dims) => {
   let canvasRef = React.useRef(Js.Nullable.null);
-  React.useEffect3(
+  React.useEffect2(
     () => {
       let canvasMaybe = React.Ref.current(canvasRef);
       apply_changes(
         canvasMaybe,
         ctx => {
           Stylus.clear_canvas(ctx, dims);
-          children(ctx, scale)->ignore;
-          writeble
-            ? List.iter(
-                p => Stylus.draw_square(ctx, p, 100. /. 28., ()),
-                state.pixels,
-              )
-            : ();
+          fn(ctx, scale)->ignore;
         },
       );
       None;
     },
-    (canvasRef, children, state.pixels),
+    (canvasRef, fn),
   );
-  React.useEffect1(
-    () => {
-      let token =
-        Js.Global.setTimeout(
-          () => {writeble ? onChange(state.pixels) : ()},
-          300,
-        );
-      Some(() => Js.Global.clearTimeout(token));
-    },
-    [|state.pixels|],
-  );
+  canvasRef;
+};
 
-  let canvas =
-    <canvas
-      width={fst(dims)->string_of_int}
-      height={snd(dims)->string_of_int}
-      ref={canvasRef->ReactDOMRe.Ref.domRef}
-      onMouseDown={e =>
-        writeble ? persistEventAnd(e, e => dispatch(MouseDown(e))) : ()
-      }
-      onMouseMove={e =>
-        writeble ? persistEventAnd(e, e => dispatch(MouseMove(e))) : ()
-      }
-      onMouseUp={e =>
-        writeble ? persistEventAnd(e, e => dispatch(MouseUp(e))) : ()
-      }
-      onMouseLeave={e =>
-        writeble ? persistEventAnd(e, e => dispatch(MouseUp(e))) : ()
-      }
-    />;
-  if (writeble) {
+[@react.component]
+let make = (~children, ~dims, ~onChange=(_: list((float, float))) => {()}) => {
+  let canvasRef = useSyncCanvas(children, dims);
+  <canvas
+    width={fst(dims)->string_of_int}
+    height={snd(dims)->string_of_int}
+    ref={canvasRef->ReactDOMRe.Ref.domRef}
+  />;
+};
+
+module Write = {
+  type state = {
+    presed: bool,
+    pixels: list((float, float)),
+  };
+
+  type action =
+    | MouseDown(ReactEvent.Mouse.t)
+    | MouseUp(ReactEvent.Mouse.t)
+    | MouseMove(ReactEvent.Mouse.t)
+    | Clear;
+
+  let noop = (state, _) => state;
+
+  let getOffset = e => {
+    let native = ReactEvent.Mouse.nativeEvent(e);
+    let p = (float_of_int(native##offsetX), float_of_int(native##offsetY));
+    let d = List.map(float_of_int, [0, (-1), 1, (-2), 2]);
+    let append = (sum: list((float, float)), (x, y)) => [
+      (fst(p) +. x, snd(p) +. y),
+      ...sum,
+    ];
+    List.fold_left(
+      (sum, dx) =>
+        List.fold_left((sum, dy) => append(sum, (dx, dy)), sum, d),
+      [],
+      d,
+    );
+  };
+  let reducer = (state: state, action: action): state => {
+    switch (action) {
+    | MouseDown(e) => {presed: true, pixels: getOffset(e) @ state.pixels}
+    | MouseMove(e) =>
+      state.presed
+        ? {presed: true, pixels: getOffset(e) @ state.pixels} : state
+    | MouseUp(_) => {presed: false, pixels: state.pixels}
+    | Clear => {presed: false, pixels: []}
+    };
+  };
+
+  let persistEventAnd = (e, fn) => {
+    ReactEvent.Mouse.persist(e);
+    fn(e);
+  };
+  [@react.component]
+  let make = (~dims, ~onChange=(_: list((float, float))) => {()}) => {
+    let (state, dispatch) =
+      React.useReducer(reducer, {presed: false, pixels: []});
+    let canvasRef =
+      useSyncCanvas(
+        (ctx, _) => {
+          List.iter(
+            p => Stylus.draw_square(ctx, p, 100. /. 28., ()),
+            state.pixels,
+          )
+        },
+        dims,
+      );
+
+    React.useEffect1(
+      () => {
+        let token = Js.Global.setTimeout(() => onChange(state.pixels), 300);
+        Some(() => Js.Global.clearTimeout(token));
+      },
+      [|state.pixels|],
+    );
+
     <div>
-      canvas
+      <canvas
+        width={fst(dims)->string_of_int}
+        height={snd(dims)->string_of_int}
+        ref={canvasRef->ReactDOMRe.Ref.domRef}
+        onMouseDown={e => persistEventAnd(e, e => dispatch(MouseDown(e)))}
+        onMouseMove={e => persistEventAnd(e, e => dispatch(MouseMove(e)))}
+        onMouseUp={e => persistEventAnd(e, e => dispatch(MouseUp(e)))}
+        onMouseLeave={e => persistEventAnd(e, e => dispatch(MouseUp(e)))}
+      />
       <button onClick={_ => dispatch(Clear)}>
         {React.string("Clear")}
       </button>
     </div>;
-  } else {
-    canvas;
   };
 };

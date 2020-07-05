@@ -7,7 +7,7 @@ var React = require("react");
 var Random = require("bs-platform/lib/js/random.js");
 var Belt_Array = require("bs-platform/lib/js/belt_Array.js");
 var Caml_primitive = require("bs-platform/lib/js/caml_primitive.js");
-var CamlinternalOO = require("bs-platform/lib/js/camlinternalOO.js");
+var Viz$ReasonReactExamples = require("../Viz/Viz.bs.js");
 var Memo$ReasonReactExamples = require("./StateManagement/Memo.bs.js");
 var Canvas$ReasonReactExamples = require("../Canvas.bs.js");
 var LinAlg$ReasonReactExamples = require("../LinAlg.bs.js");
@@ -85,34 +85,13 @@ function massage(p) {
   return m;
 }
 
-var class_tables = /* Cons */[
-  0,
-  0,
-  0
-];
-
 function DetectDigits$WriteDigit(Props) {
   var onChange = Props.onChange;
-  return React.createElement(Canvas$ReasonReactExamples.make, {
-              children: (function (param, param$1) {
-                  if (!class_tables[0]) {
-                    var $$class = CamlinternalOO.create_table(0);
-                    var env = CamlinternalOO.new_variable($$class, "");
-                    var env_init = function (env$1) {
-                      var self = CamlinternalOO.create_object_opt(0, $$class);
-                      self[env] = env$1;
-                      return self;
-                    };
-                    CamlinternalOO.init_class($$class);
-                    class_tables[0] = env_init;
-                  }
-                  return Curry._1(class_tables[0], 0);
-                }),
+  return React.createElement(Canvas$ReasonReactExamples.Write.make, {
               dims: /* tuple */[
                 100,
                 100
               ],
-              writeble: true,
               onChange: (function (p) {
                   return Curry._1(onChange, massage(p));
                 })
@@ -170,27 +149,6 @@ var DigitGallery = {
   make: DetectDigits$DigitGallery
 };
 
-function DetectDigits$LineChart(Props) {
-  var dims = Props.dims;
-  var values = Props.values;
-  return React.createElement(Canvas$ReasonReactExamples.make, {
-              children: (function (ctx, scale) {
-                  var match = List.length(values) > 0;
-                  if (match) {
-                    var match$1 = Curry._2(scale, $$Array.of_list(values), dims);
-                    return Stylus$ReasonReactExamples.draw_line(ctx, List.map(match$1[0], values), undefined, /* () */0);
-                  } else {
-                    return /* () */0;
-                  }
-                }),
-              dims: dims
-            });
-}
-
-var LineChart = {
-  make: DetectDigits$LineChart
-};
-
 function getSparkline($$window, fn) {
   return $$Array.to_list($$Array.mapi((function (ix, p) {
                     return /* tuple */[
@@ -215,7 +173,7 @@ function DetectDigits$ModelDebugging(Props) {
                       style: {
                         marginRight: "20px"
                       }
-                    }, "Epoch : " + (String(epoch) + "")), React.createElement(DetectDigits$LineChart, {
+                    }, "Epoch : " + (String(epoch) + "")), React.createElement(Viz$ReasonReactExamples.Line.make, {
                       dims: /* tuple */[
                         500,
                         100
@@ -229,7 +187,7 @@ function DetectDigits$ModelDebugging(Props) {
                     flexFlow: "wrap"
                   }
                 }, $$Array.init(10, (function (digit) {
-                        return React.createElement("div", undefined, React.createElement("div", undefined, "" + (String(digit) + "")), React.createElement(DetectDigits$LineChart, {
+                        return React.createElement("div", undefined, React.createElement("div", undefined, "" + (String(digit) + "")), React.createElement(Viz$ReasonReactExamples.Line.make, {
                                         dims: /* tuple */[
                                           137,
                                           137
@@ -246,67 +204,19 @@ var ModelDebugging = {
   make: DetectDigits$ModelDebugging
 };
 
-function texp(n) {
-  if (n !== -1) {
-    if (n !== 0) {
-      var x = texp(n / 2 | 0);
-      var match = n % 2 === -1;
-      return x * x * (
-              match ? 1 / 10 : 1
-            );
-    } else {
-      return 1;
-    }
-  } else {
-    return 1 / 10;
-  }
-}
-
-function DetectDigits$Bar(Props) {
-  var sz = Props.sz;
-  var value = Props.value;
-  return React.createElement(Canvas$ReasonReactExamples.make, {
-              children: (function (ctx, param) {
-                  return $$Array.iteri((function (ix, e) {
-                                var match = value >= e;
-                                if (match) {
-                                  return Stylus$ReasonReactExamples.draw_square(ctx, /* tuple */[
-                                              ix * 20,
-                                              0.0
-                                            ], 20, 255 - 255 / 10 * ix);
-                                } else {
-                                  return /* () */0;
-                                }
-                              }), /* array */[
-                              texp(-150),
-                              texp(-100),
-                              texp(-50),
-                              texp(-20),
-                              texp(-10),
-                              texp(-5),
-                              0.0001,
-                              0.001,
-                              0.01,
-                              0.5
-                            ]);
-                }),
-              dims: /* tuple */[
-                sz,
-                20
-              ]
-            });
-}
-
-var Bar = {
-  texp: texp,
-  make: DetectDigits$Bar
-};
-
 function column(param) {
   return {
           display: "flex",
           flex: "1",
           flexDirection: "column"
+        };
+}
+
+function flex(param) {
+  return {
+          display: "flex",
+          width: "100%",
+          flexDirection: "row"
         };
 }
 
@@ -332,16 +242,13 @@ function DetectDigits$Prediction(Props) {
         }, React.createElement("div", undefined, $$Array.mapi((function (ix, v) {
                     var round = v.toPrecision(5);
                     return React.createElement("div", {
-                                style: {
-                                  display: "flex",
-                                  width: "100%",
-                                  flexDirection: "row"
-                                }
+                                key: "" + (String(ix) + (": " + (String(round) + ""))),
+                                style: flex(/* () */0)
                               }, React.createElement("span", {
                                     style: column(/* () */0)
                                   }, "" + (String(ix) + (" : " + (String(round) + "")))), React.createElement("span", {
                                     style: column(/* () */0)
-                                  }, React.createElement(DetectDigits$Bar, {
+                                  }, React.createElement(Viz$ReasonReactExamples.Bar.make, {
                                         sz: 200,
                                         value: v
                                       })));
@@ -365,6 +272,7 @@ function DetectDigits$Prediction(Props) {
 
 var Prediction = {
   column: column,
+  flex: flex,
   make: DetectDigits$Prediction
 };
 
@@ -390,9 +298,7 @@ exports.forn = forn;
 exports.Digit = Digit;
 exports.WriteDigit = WriteDigit;
 exports.DigitGallery = DigitGallery;
-exports.LineChart = LineChart;
 exports.ModelDebugging = ModelDebugging;
-exports.Bar = Bar;
 exports.Prediction = Prediction;
 exports.make = make;
 /* react Not a pure module */

@@ -61,6 +61,35 @@ function scale(points, dims) {
         ];
 }
 
+function useSyncCanvas(fn, dims) {
+  var canvasRef = React.useRef(null);
+  React.useEffect((function () {
+          var canvasMaybe = canvasRef.current;
+          apply_changes(canvasMaybe, (function (ctx) {
+                  Stylus$ReasonReactExamples.clear_canvas(ctx, dims);
+                  Curry._2(fn, ctx, scale);
+                  return /* () */0;
+                }));
+          return ;
+        }), /* tuple */[
+        canvasRef,
+        fn
+      ]);
+  return canvasRef;
+}
+
+function Canvas(Props) {
+  var children = Props.children;
+  var dims = Props.dims;
+  Props.onChange;
+  var canvasRef = useSyncCanvas(children, dims);
+  return React.createElement("canvas", {
+              ref: canvasRef,
+              height: String(dims[1]),
+              width: String(dims[0])
+            });
+}
+
 function noop(state, param) {
   return state;
 }
@@ -143,113 +172,76 @@ function persistEventAnd(e, fn) {
   return Curry._1(fn, e);
 }
 
-function Canvas(Props) {
-  var children = Props.children;
+function Canvas$Write(Props) {
   var dims = Props.dims;
-  var match = Props.writeble;
-  var writeble = match !== undefined ? match : false;
-  var match$1 = Props.onChange;
-  var onChange = match$1 !== undefined ? match$1 : (function (param) {
+  var match = Props.onChange;
+  var onChange = match !== undefined ? match : (function (param) {
         return /* () */0;
       });
-  var match$2 = React.useReducer(writeble ? reducer : noop, {
+  var match$1 = React.useReducer(reducer, {
         presed: false,
         pixels: /* [] */0
       });
-  var dispatch = match$2[1];
-  var state = match$2[0];
-  var canvasRef = React.useRef(null);
-  React.useEffect((function (param) {
-          var canvasMaybe = canvasRef.current;
-          apply_changes(canvasMaybe, (function (ctx) {
-                  Stylus$ReasonReactExamples.clear_canvas(ctx, dims);
-                  Curry._2(children, ctx, scale);
-                  if (writeble) {
-                    return List.iter((function (p) {
-                                  return Stylus$ReasonReactExamples.draw_square(ctx, p, 100 / 28, /* () */0);
-                                }), state.pixels);
-                  } else {
-                    return /* () */0;
-                  }
-                }));
-          return ;
-        }), /* tuple */[
-        canvasRef,
-        children,
-        state.pixels
-      ]);
+  var dispatch = match$1[1];
+  var state = match$1[0];
+  var canvasRef = useSyncCanvas((function (ctx, param) {
+          return List.iter((function (p) {
+                        return Stylus$ReasonReactExamples.draw_square(ctx, p, 100 / 28, /* () */0);
+                      }), state.pixels);
+        }), dims);
   React.useEffect((function () {
           var token = setTimeout((function (param) {
-                  if (writeble) {
-                    return Curry._1(onChange, state.pixels);
-                  } else {
-                    return /* () */0;
-                  }
+                  return Curry._1(onChange, state.pixels);
                 }), 300);
           return (function (param) {
                     clearTimeout(token);
                     return /* () */0;
                   });
         }), /* array */[state.pixels]);
-  var canvas = React.createElement("canvas", {
-        ref: canvasRef,
-        height: String(dims[1]),
-        width: String(dims[0]),
-        onMouseDown: (function (e) {
-            if (writeble) {
-              return persistEventAnd(e, (function (e) {
-                            return Curry._1(dispatch, /* MouseDown */Block.__(0, [e]));
-                          }));
-            } else {
-              return /* () */0;
-            }
-          }),
-        onMouseLeave: (function (e) {
-            if (writeble) {
-              return persistEventAnd(e, (function (e) {
-                            return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
-                          }));
-            } else {
-              return /* () */0;
-            }
-          }),
-        onMouseMove: (function (e) {
-            if (writeble) {
-              return persistEventAnd(e, (function (e) {
-                            return Curry._1(dispatch, /* MouseMove */Block.__(2, [e]));
-                          }));
-            } else {
-              return /* () */0;
-            }
-          }),
-        onMouseUp: (function (e) {
-            if (writeble) {
-              return persistEventAnd(e, (function (e) {
-                            return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
-                          }));
-            } else {
-              return /* () */0;
-            }
-          })
-      });
-  if (writeble) {
-    return React.createElement("div", undefined, canvas, React.createElement("button", {
-                    onClick: (function (param) {
-                        return Curry._1(dispatch, /* Clear */0);
-                      })
-                  }, "Clear"));
-  } else {
-    return canvas;
-  }
+  return React.createElement("div", undefined, React.createElement("canvas", {
+                  ref: canvasRef,
+                  height: String(dims[1]),
+                  width: String(dims[0]),
+                  onMouseDown: (function (e) {
+                      return persistEventAnd(e, (function (e) {
+                                    return Curry._1(dispatch, /* MouseDown */Block.__(0, [e]));
+                                  }));
+                    }),
+                  onMouseLeave: (function (e) {
+                      return persistEventAnd(e, (function (e) {
+                                    return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
+                                  }));
+                    }),
+                  onMouseMove: (function (e) {
+                      return persistEventAnd(e, (function (e) {
+                                    return Curry._1(dispatch, /* MouseMove */Block.__(2, [e]));
+                                  }));
+                    }),
+                  onMouseUp: (function (e) {
+                      return persistEventAnd(e, (function (e) {
+                                    return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
+                                  }));
+                    })
+                }), React.createElement("button", {
+                  onClick: (function (param) {
+                      return Curry._1(dispatch, /* Clear */0);
+                    })
+                }, "Clear"));
 }
+
+var Write = {
+  noop: noop,
+  getOffset: getOffset,
+  reducer: reducer,
+  persistEventAnd: persistEventAnd,
+  make: Canvas$Write
+};
 
 var make = Canvas;
 
 exports.apply_changes = apply_changes;
 exports.scale = scale;
-exports.noop = noop;
-exports.getOffset = getOffset;
-exports.reducer = reducer;
-exports.persistEventAnd = persistEventAnd;
+exports.useSyncCanvas = useSyncCanvas;
 exports.make = make;
+exports.Write = Write;
 /* react Not a pure module */

@@ -68,10 +68,7 @@ module WriteDigit = {
 
   [@react.component]
   let make = (~onChange: LinAlg.Matrix.t => unit) => {
-    let dims = (100, 100);
-    <Canvas dims writeble=true onChange={p => onChange(massage(p))}>
-      {(_, _) => {}}
-    </Canvas>;
+    <Canvas.Write dims=(100, 100) onChange={p => onChange(massage(p))} />;
   };
 };
 
@@ -111,22 +108,6 @@ module DigitGallery = {
   };
 };
 
-module LineChart = {
-  [@react.component]
-  let make = (~dims, ~values) => {
-    let points = values;
-    <Canvas dims>
-      {(ctx, scale) =>
-         List.length(points) > 0
-           ? {
-             let (t, _) = scale(Array.of_list(points), dims);
-             Stylus.draw_line(ctx, List.map(t, points), ());
-           }
-           : ()}
-    </Canvas>;
-  };
-};
-
 module ModelDebugging = {
   let getSparkline = (window, fn) => {
     Array.mapi((ix, p) => (float_of_int(ix), fn(p)), window)
@@ -155,7 +136,7 @@ module ModelDebugging = {
         <div style={ReactDOMRe.Style.make(~marginRight="20px", ())}>
           {React.string({j|Epoch : $epoch|j})}
         </div>
-        <LineChart
+        <Viz.Line
           dims=(500, 100)
           values={getSparkline(window, p => p.accuracy)}
         />
@@ -166,7 +147,7 @@ module ModelDebugging = {
            Array.init(10, digit =>
              <div>
                <div> {React.string({j|$digit|j})} </div>
-               <LineChart
+               <Viz.Line
                  dims=(137, 137)
                  values={getSparkline(window, p =>
                    LinAlg.Matrix.get(0, digit, p.cost)
@@ -180,47 +161,6 @@ module ModelDebugging = {
   };
 };
 
-module Bar = {
-  let rec texp = n =>
-    switch (n) {
-    | 0 => 1.
-    | (-1) => 1. /. 10.
-    | n =>
-      let x = texp(n / 2);
-      x *. x *. (n mod 2 == (-1) ? 1. /. 10. : 1.);
-    };
-  [@react.component]
-  let make = (~sz, ~value) => {
-    <Canvas dims=(sz, 20)>
-      {(ctx, _) => {
-         Array.iteri(
-           (ix, e) =>
-             value >= e
-               ? Stylus.draw_square(
-                   ctx,
-                   (float_of_int(ix) *. 20., 0.0),
-                   20.,
-                   255. -. 255. /. 10. *. float_of_int(ix),
-                 )
-               : (),
-           [|
-             texp(-150),
-             texp(-100),
-             texp(-50),
-             texp(-20),
-             texp(-10),
-             texp(-5),
-             0.0001,
-             0.001,
-             0.01,
-             0.5,
-           |],
-         );
-       }}
-    </Canvas>;
-  };
-};
-
 module Prediction = {
   let column = () => {
     ReactDOMRe.Style.make(
@@ -230,6 +170,14 @@ module Prediction = {
       (),
     );
   };
+
+  let flex = () =>
+    ReactDOMRe.Style.make(
+      ~display="flex",
+      ~width="100%",
+      ~flexDirection="row",
+      (),
+    );
 
   [@react.component]
   let make = (~prediction: MLEngine.prediction, ~onChange) => {
@@ -251,17 +199,13 @@ module Prediction = {
                   (ix, v: float) => {
                     let round =
                       Js.Float.toPrecisionWithPrecision(v, ~digits=5);
-                    <div
-                      style={ReactDOMRe.Style.make(
-                        ~display="flex",
-                        ~width="100%",
-                        ~flexDirection="row",
-                        (),
-                      )}>
+                    <div key={j|$ix: $round|j} style={flex()}>
                       <span style={column()}>
                         {React.string({j|$ix : $round|j})}
                       </span>
-                      <span style={column()}> <Bar sz=200 value=v /> </span>
+                      <span style={column()}>
+                        <Viz.Bar sz=200 value=v />
+                      </span>
                     </div>;
                   },
                   _,
