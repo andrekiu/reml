@@ -43,11 +43,6 @@ module Digit = {
   };
 };
 
-type entry = {
-  image: Js.Typed_array.Uint8Array.t,
-  label: int,
-};
-
 module WriteDigit = {
   let massage = p => {
     let m = LinAlg.Matrix.make(Array.init(28, _ => Array.init(28, _ => 0.0)));
@@ -55,9 +50,7 @@ module WriteDigit = {
     List.iter(
       ((x, y)) => {
         let (nx, ny) = (int_of_float(x /. sz), int_of_float(y /. sz));
-        if (nx < 0 || nx >= 28 || ny < 0 || ny >= 28) {
-          ();
-        } else {
+        if (!(nx < 0 || nx >= 28 || ny < 0 || ny >= 28)) {
           LinAlg.Matrix.set(ny, nx, 255.0, m);
         };
       },

@@ -77,7 +77,7 @@ function massage(p) {
           var nx = param[0] / sz | 0;
           var ny = param[1] / sz | 0;
           if (nx < 0 || nx >= 28 || ny < 0 || ny >= 28) {
-            return /* () */0;
+            return 0;
           } else {
             return LinAlg$ReasonReactExamples.Matrix.set(ny, nx, 255.0, m);
           }
