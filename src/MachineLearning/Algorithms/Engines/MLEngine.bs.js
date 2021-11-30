@@ -1,28 +1,27 @@
 'use strict';
 
-var $$Array = require("bs-platform/lib/js/array.js");
-var Block = require("bs-platform/lib/js/block.js");
-var Curry = require("bs-platform/lib/js/curry.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
 var TrainingQueue$ReasonReactExamples = require("../../UI/TrainingQueue.bs.js");
 
 function reducer(state, action) {
-  switch (action.tag | 0) {
+  switch (action.TAG | 0) {
     case /* WorkerStarted */0 :
         return {
                 training: state.training,
                 prediction: state.prediction,
-                send_to_worker: action[0]
+                send_to_worker: action._0
               };
     case /* Update */1 :
         var init = state.training;
         return {
                 training: {
                   samples: init.samples,
-                  params: $$Array.append(state.training.params, /* array */[{
-                          theta: action[0],
-                          cost: action[1],
-                          accuracy: action[2]
+                  params: $$Array.append(state.training.params, [{
+                          theta: action._0,
+                          cost: action._1,
+                          accuracy: action._2
                         }])
                 },
                 prediction: state.prediction,
@@ -32,7 +31,7 @@ function reducer(state, action) {
         var init$1 = state.training;
         return {
                 training: {
-                  samples: action[0],
+                  samples: action._0,
                   params: init$1.params
                 },
                 prediction: state.prediction,
@@ -41,10 +40,11 @@ function reducer(state, action) {
     case /* Predicted */3 :
         return {
                 training: state.training,
-                prediction: /* Predicted */Block.__(1, [
-                    action[0],
-                    action[1]
-                  ]),
+                prediction: {
+                  TAG: /* Predicted */1,
+                  _0: action._0,
+                  _1: action._1
+                },
                 send_to_worker: state.send_to_worker
               };
     
@@ -54,42 +54,53 @@ function reducer(state, action) {
 function use(param) {
   var match = React.useReducer(reducer, {
         training: {
-          samples: /* array */[],
-          params: /* array */[]
+          samples: [],
+          params: []
         },
         prediction: /* Idle */0,
         send_to_worker: (function (param) {
-            return /* () */0;
+            
           })
       });
   var dispatch = match[1];
   var state = match[0];
   React.useEffect((function () {
-          var match = TrainingQueue$ReasonReactExamples.NISTClient.start((function (msg) {
-                  switch (msg.tag | 0) {
-                    case /* Ack */0 :
-                        return Curry._1(dispatch, /* SetSamples */Block.__(2, [msg[0]]));
-                    case /* Update */1 :
-                        return Curry._1(dispatch, /* Update */Block.__(1, [
-                                      msg[0],
-                                      msg[1],
-                                      msg[2]
-                                    ]));
-                    case /* Prediction */2 :
-                        return Curry._1(dispatch, /* Predicted */Block.__(3, [
-                                      msg[0],
-                                      msg[1]
-                                    ]));
-                    
-                  }
-                }));
-          Curry._1(dispatch, /* WorkerStarted */Block.__(0, [match[0]]));
+          var match = TrainingQueue$ReasonReactExamples.NISTClient.start(function (msg) {
+                switch (msg.TAG | 0) {
+                  case /* Ack */0 :
+                      return Curry._1(dispatch, {
+                                  TAG: /* SetSamples */2,
+                                  _0: msg._0
+                                });
+                  case /* Update */1 :
+                      return Curry._1(dispatch, {
+                                  TAG: /* Update */1,
+                                  _0: msg._0,
+                                  _1: msg._1,
+                                  _2: msg._2
+                                });
+                  case /* Prediction */2 :
+                      return Curry._1(dispatch, {
+                                  TAG: /* Predicted */3,
+                                  _0: msg._0,
+                                  _1: msg._1
+                                });
+                  
+                }
+              });
+          Curry._1(dispatch, {
+                TAG: /* WorkerStarted */0,
+                _0: match[0]
+              });
           return match[1];
-        }), ([]));
-  return /* tuple */[
+        }), []);
+  return [
           state,
           (function (e) {
-              return Curry._1(state.send_to_worker, /* Predict */Block.__(1, [e]));
+              return Curry._1(state.send_to_worker, {
+                          TAG: /* Predict */1,
+                          _0: e
+                        });
             })
         ];
 }

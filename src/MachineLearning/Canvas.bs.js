@@ -1,42 +1,40 @@
 'use strict';
 
-var List = require("bs-platform/lib/js/list.js");
-var $$Array = require("bs-platform/lib/js/array.js");
-var Block = require("bs-platform/lib/js/block.js");
-var Curry = require("bs-platform/lib/js/curry.js");
+var Caml = require("rescript/lib/js/caml.js");
+var List = require("rescript/lib/js/list.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
-var Pervasives = require("bs-platform/lib/js/pervasives.js");
-var Caml_primitive = require("bs-platform/lib/js/caml_primitive.js");
+var Caml_array = require("rescript/lib/js/caml_array.js");
+var Pervasives = require("rescript/lib/js/pervasives.js");
 var Stylus$ReasonReactExamples = require("./Stylus.bs.js");
 
 function apply_changes(canvasMaybe, fn) {
-  if (canvasMaybe == null) {
-    return /* () */0;
-  } else {
+  if (!(canvasMaybe == null)) {
     Curry._1(fn, canvasMaybe.getContext("2d"));
-    return /* () */0;
+    return ;
   }
+  
 }
 
 function scale(points, dims) {
   var dim_scale = function (v, limit) {
     var match = $$Array.fold_left((function (sum, e) {
-            return /* tuple */[
-                    Caml_primitive.caml_float_min(sum[0], e),
-                    Caml_primitive.caml_float_max(sum[1], e)
+            return [
+                    Caml.caml_float_min(sum[0], e),
+                    Caml.caml_float_max(sum[1], e)
                   ];
-          }), /* tuple */[
-          Caml_array.caml_array_get(v, 0),
-          Caml_array.caml_array_get(v, 0)
+          }), [
+          Caml_array.get(v, 0),
+          Caml_array.get(v, 0)
         ], v);
     var high = match[1];
     var low = match[0];
-    return /* tuple */[
+    return [
             (function (e) {
                 return (e - low) * limit / (high - low);
               }),
-            /* tuple */[
+            [
               low,
               high
             ]
@@ -50,9 +48,9 @@ function scale(points, dims) {
               return e[1];
             }), points), dims[1]);
   var gen_y = match$1[0];
-  return /* tuple */[
+  return [
           (function (p) {
-              return /* tuple */[
+              return [
                       Curry._1(gen_x, p[0]),
                       dims[1] - Curry._1(gen_y, p[1])
                     ];
@@ -68,10 +66,10 @@ function useSyncCanvas(fn, dims) {
           apply_changes(canvasMaybe, (function (ctx) {
                   Stylus$ReasonReactExamples.clear_canvas(ctx, dims);
                   Curry._2(fn, ctx, scale);
-                  return /* () */0;
+                  
                 }));
-          return ;
-        }), /* tuple */[
+          
+        }), [
         canvasRef,
         fn
       ]);
@@ -81,7 +79,6 @@ function useSyncCanvas(fn, dims) {
 function Canvas(Props) {
   var children = Props.children;
   var dims = Props.dims;
-  Props.onChange;
   var canvasRef = useSyncCanvas(children, dims);
   return React.createElement("canvas", {
               ref: canvasRef,
@@ -96,40 +93,39 @@ function noop(state, param) {
 
 function getOffset(e) {
   var $$native = e.nativeEvent;
-  var p_000 = $$native.offsetX;
-  var p_001 = $$native.offsetY;
+  var p_0 = $$native.offsetX;
+  var p_1 = $$native.offsetY;
   var d = List.map((function (prim) {
           return prim;
-        }), /* :: */[
-        0,
-        /* :: */[
-          -1,
-          /* :: */[
-            1,
-            /* :: */[
-              -2,
-              /* :: */[
-                2,
-                /* [] */0
-              ]
-            ]
-          ]
-        ]
-      ]);
+        }), {
+        hd: 0,
+        tl: {
+          hd: -1,
+          tl: {
+            hd: 1,
+            tl: {
+              hd: -2,
+              tl: {
+                hd: 2,
+                tl: /* [] */0
+              }
+            }
+          }
+        }
+      });
   return List.fold_left((function (sum, dx) {
                 return List.fold_left((function (sum, dy) {
-                              var sum$1 = sum;
-                              var param = /* tuple */[
+                              var param = [
                                 dx,
                                 dy
                               ];
-                              return /* :: */[
-                                      /* tuple */[
-                                        p_000 + param[0],
-                                        p_001 + param[1]
+                              return {
+                                      hd: [
+                                        p_0 + param[0],
+                                        p_1 + param[1]
                                       ],
-                                      sum$1
-                                    ];
+                                      tl: sum
+                                    };
                             }), sum, d);
               }), /* [] */0, d);
 }
@@ -140,30 +136,28 @@ function reducer(state, action) {
             presed: false,
             pixels: /* [] */0
           };
-  } else {
-    switch (action.tag | 0) {
-      case /* MouseDown */0 :
+  }
+  switch (action.TAG | 0) {
+    case /* MouseDown */0 :
+        return {
+                presed: true,
+                pixels: Pervasives.$at(getOffset(action._0), state.pixels)
+              };
+    case /* MouseUp */1 :
+        return {
+                presed: false,
+                pixels: state.pixels
+              };
+    case /* MouseMove */2 :
+        if (state.presed) {
           return {
                   presed: true,
-                  pixels: Pervasives.$at(getOffset(action[0]), state.pixels)
+                  pixels: Pervasives.$at(getOffset(action._0), state.pixels)
                 };
-      case /* MouseUp */1 :
-          return {
-                  presed: false,
-                  pixels: state.pixels
-                };
-      case /* MouseMove */2 :
-          var match = state.presed;
-          if (match) {
-            return {
-                    presed: true,
-                    pixels: Pervasives.$at(getOffset(action[0]), state.pixels)
-                  };
-          } else {
-            return state;
-          }
-      
-    }
+        } else {
+          return state;
+        }
+    
   }
 }
 
@@ -174,19 +168,19 @@ function persistEventAnd(e, fn) {
 
 function Canvas$Write(Props) {
   var dims = Props.dims;
-  var match = Props.onChange;
-  var onChange = match !== undefined ? match : (function (param) {
-        return /* () */0;
+  var onChangeOpt = Props.onChange;
+  var onChange = onChangeOpt !== undefined ? onChangeOpt : (function (param) {
+        
       });
-  var match$1 = React.useReducer(reducer, {
+  var match = React.useReducer(reducer, {
         presed: false,
         pixels: /* [] */0
       });
-  var dispatch = match$1[1];
-  var state = match$1[0];
+  var dispatch = match[1];
+  var state = match[0];
   var canvasRef = useSyncCanvas((function (ctx, param) {
           return List.iter((function (p) {
-                        return Stylus$ReasonReactExamples.draw_square(ctx, p, 100 / 28, /* () */0);
+                        return Stylus$ReasonReactExamples.draw_square(ctx, p, 100 / 28, undefined);
                       }), state.pixels);
         }), dims);
   React.useEffect((function () {
@@ -195,31 +189,43 @@ function Canvas$Write(Props) {
                 }), 300);
           return (function (param) {
                     clearTimeout(token);
-                    return /* () */0;
+                    
                   });
-        }), /* array */[state.pixels]);
+        }), [state.pixels]);
   return React.createElement("div", undefined, React.createElement("canvas", {
                   ref: canvasRef,
                   height: String(dims[1]),
                   width: String(dims[0]),
                   onMouseDown: (function (e) {
                       return persistEventAnd(e, (function (e) {
-                                    return Curry._1(dispatch, /* MouseDown */Block.__(0, [e]));
+                                    return Curry._1(dispatch, {
+                                                TAG: /* MouseDown */0,
+                                                _0: e
+                                              });
                                   }));
                     }),
                   onMouseLeave: (function (e) {
                       return persistEventAnd(e, (function (e) {
-                                    return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
+                                    return Curry._1(dispatch, {
+                                                TAG: /* MouseUp */1,
+                                                _0: e
+                                              });
                                   }));
                     }),
                   onMouseMove: (function (e) {
                       return persistEventAnd(e, (function (e) {
-                                    return Curry._1(dispatch, /* MouseMove */Block.__(2, [e]));
+                                    return Curry._1(dispatch, {
+                                                TAG: /* MouseMove */2,
+                                                _0: e
+                                              });
                                   }));
                     }),
                   onMouseUp: (function (e) {
                       return persistEventAnd(e, (function (e) {
-                                    return Curry._1(dispatch, /* MouseUp */Block.__(1, [e]));
+                                    return Curry._1(dispatch, {
+                                                TAG: /* MouseUp */1,
+                                                _0: e
+                                              });
                                   }));
                     })
                 }), React.createElement("button", {

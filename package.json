@@ -2,24 +2,25 @@
   "name": "reason-react",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w -ws _ ",
-    "clean": "bsb -clean-world",
+    "build": "rescript build",
+    "start": "rescript build -w -ws _ ",
+    "clean": "rescript clean",
     "server": "moduleserve ./ --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "BuckleScript",
-    "ReasonReact",
-    "reason-react"
+    "Rescript",
+    "rescript-react"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "bs-webapi": "^0.15.6",
+    "rescript-webapi": "*",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "reason-react": ">=0.7.0"
+    "reason-react": ">=0.7.0",
+    "rescript": "9.1"
   },
   "devDependencies": {
     "bs-platform": "^7.0.1",

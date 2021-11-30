@@ -1,5 +1,4 @@
-[%raw
-  {|
+%raw(`
   (() => {
   this.currentScript = {
     getAttribute: (e) => {
@@ -15,5 +14,4 @@
   this.document = this;
   importScripts("/moduleserve/load.js");
   })()
-|}
-];
+`)

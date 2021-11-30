@@ -1,26 +1,28 @@
 'use strict';
 
-var Block = require("bs-platform/lib/js/block.js");
-var Curry = require("bs-platform/lib/js/curry.js");
+var Curry = require("rescript/lib/js/curry.js");
 
-var ClientMessage = { };
+var ClientMessage = {};
 
-var WorkerMessage = { };
+var WorkerMessage = {};
 
 function start(onUpdate) {
   var worker = new Worker("/src/BoostrapWorker.bs.js");
   worker.onmessage = (function (m) {
       return Curry._1(onUpdate, m.data);
     });
-  worker.postMessage(/* Start */Block.__(0, ["0. Start Worker From the Client"]));
-  return /* tuple */[
+  worker.postMessage({
+        TAG: /* Start */0,
+        _0: "0. Start Worker From the Client"
+      });
+  return [
           (function (m) {
               worker.postMessage(m);
-              return /* () */0;
+              
             }),
           (function (param) {
               worker.terminate();
-              return /* () */0;
+              
             })
         ];
 }

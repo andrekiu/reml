@@ -1,14 +1,14 @@
 'use strict';
 
-var $$Array = require("bs-platform/lib/js/array.js");
-var Curry = require("bs-platform/lib/js/curry.js");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
-var Caml_primitive = require("bs-platform/lib/js/caml_primitive.js");
-var Caml_js_exceptions = require("bs-platform/lib/js/caml_js_exceptions.js");
+var Caml = require("rescript/lib/js/caml.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Curry = require("rescript/lib/js/curry.js");
+var Caml_array = require("rescript/lib/js/caml_array.js");
+var Caml_js_exceptions = require("rescript/lib/js/caml_js_exceptions.js");
 var LinAlg$ReasonReactExamples = require("./LinAlg.bs.js");
 
-function norm(x, $staropt$star, param) {
-  var ix = $staropt$star !== undefined ? $staropt$star : /* array */[];
+function norm(x, ixOpt, param) {
+  var ix = ixOpt !== undefined ? ixOpt : [];
   var reduce = function (fn, e, m) {
     var _ix = 0;
     var _sum = e;
@@ -17,11 +17,10 @@ function norm(x, $staropt$star, param) {
       var ix = _ix;
       if (ix === m) {
         return sum;
-      } else {
-        _sum = Curry._2(fn, sum, ix);
-        _ix = ix + 1 | 0;
-        continue ;
       }
+      _sum = Curry._2(fn, sum, ix);
+      _ix = ix + 1 | 0;
+      continue ;
     };
   };
   var normalize_dim = function (col, ans) {
@@ -29,50 +28,47 @@ function norm(x, $staropt$star, param) {
     var m = match[0];
     var first = LinAlg$ReasonReactExamples.Matrix.get(0, col, ans);
     var match$1 = reduce((function (sum, row) {
-            var param = sum;
             var e = LinAlg$ReasonReactExamples.Matrix.get(row, col, ans);
-            return /* tuple */[
-                    Caml_primitive.caml_float_min(param[0], e),
-                    Caml_primitive.caml_float_max(param[1], e),
-                    param[2] + e
+            return [
+                    Caml.caml_float_min(sum[0], e),
+                    Caml.caml_float_max(sum[1], e),
+                    sum[2] + e
                   ];
-          }), /* tuple */[
+          }), [
           first,
           first,
           0.0
         ], m);
     var mean = match$1[2] / m;
     var range = match$1[1] - match$1[0] + 0.000000000001;
-    return (function (ans) {
-        var match = LinAlg$ReasonReactExamples.Matrix.size(ans);
-        var fn = function (ix) {
-          return LinAlg$ReasonReactExamples.Matrix.set(ix, col, (LinAlg$ReasonReactExamples.Matrix.get(ix, col, ans) - mean) / range, ans);
-        };
-        var m = match[0];
-        var _ix = 0;
-        while(true) {
-          var ix = _ix;
-          if (ix === m) {
-            return /* () */0;
-          } else {
-            Curry._1(fn, ix);
-            _ix = ix + 1 | 0;
-            continue ;
-          }
-        };
-      });
+    return function (ans) {
+      var match = LinAlg$ReasonReactExamples.Matrix.size(ans);
+      var fn = function (ix) {
+        return LinAlg$ReasonReactExamples.Matrix.set(ix, col, (LinAlg$ReasonReactExamples.Matrix.get(ix, col, ans) - mean) / range, ans);
+      };
+      var m = match[0];
+      var _ix = 0;
+      while(true) {
+        var ix = _ix;
+        if (ix === m) {
+          return ;
+        }
+        Curry._1(fn, ix);
+        _ix = ix + 1 | 0;
+        continue ;
+      };
+    };
   };
   var ans = LinAlg$ReasonReactExamples.Matrix.make(x[1]);
   var match = LinAlg$ReasonReactExamples.Matrix.size(ans);
-  var match$1 = ix.length === 0;
   var massage = $$Array.map((function (row_ix) {
           var massager = normalize_dim(row_ix, ans);
           Curry._1(massager, ans);
           return massager;
-        }), match$1 ? $$Array.init(match[1], (function (ic) {
+        }), ix.length === 0 ? $$Array.init(match[1], (function (ic) {
                 return ic;
               })) : ix);
-  return /* tuple */[
+  return [
           ans,
           (function (sample) {
               var ans = LinAlg$ReasonReactExamples.Matrix.make(sample[1]);
@@ -86,27 +82,27 @@ function norm(x, $staropt$star, param) {
 
 function normalize(points) {
   var aggregate = function (param, e) {
-    return /* tuple */[
-            Caml_primitive.caml_float_min(param[0], e),
-            Caml_primitive.caml_float_max(param[1], e),
+    return [
+            Caml.caml_float_min(param[0], e),
+            Caml.caml_float_max(param[1], e),
             param[2] + e
           ];
   };
-  var match = Caml_array.caml_array_get(points, 0);
+  var match = Caml_array.get(points, 0);
   var y = match[1];
   var x = match[0];
   var match$1 = $$Array.fold_left((function (param, param$1) {
-          return /* tuple */[
+          return [
                   aggregate(param[0], param$1[0]),
                   aggregate(param[1], param$1[1])
                 ];
-        }), /* tuple */[
-        /* tuple */[
+        }), [
+        [
           x,
           x,
           0
         ],
-        /* tuple */[
+        [
           y,
           y,
           0
@@ -123,25 +119,24 @@ function normalize(points) {
     return (p - get_u(t)) / get_d(t);
   };
   var normalized = $$Array.map((function (param) {
-          return /* tuple */[
+          return [
                   transform(tx, param[0]),
                   param[1]
                 ];
         }), points);
   var x_m = LinAlg$ReasonReactExamples.Matrix.make($$Array.init(normalized.length, (function (r) {
               return $$Array.init(2, (function (c) {
-                            var match = c === 0;
-                            if (match) {
+                            if (c === 0) {
                               return 1;
                             } else {
-                              return Caml_array.caml_array_get(normalized, r)[0];
+                              return Caml_array.get(normalized, r)[0];
                             }
                           }));
             })));
   var y$1 = LinAlg$ReasonReactExamples.Matrix.vector($$Array.map((function (s) {
               return s[1];
             }), normalized));
-  return /* tuple */[
+  return [
           x_m,
           y$1
         ];
@@ -185,8 +180,7 @@ function gradient_step$1(alpha, theta, x_m, y) {
   var scale = LinAlg$ReasonReactExamples.Matrix.mul_c(residual, alpha / m);
   var __x = LinAlg$ReasonReactExamples.Matrix.res(theta, scale);
   return LinAlg$ReasonReactExamples.Matrix.res(__x, LinAlg$ReasonReactExamples.Matrix.transform(theta, (function (r, param, e) {
-                    var match = r === 0;
-                    if (match) {
+                    if (r === 0) {
                       return e / m;
                     } else {
                       return e * 1 / m;
@@ -236,13 +230,12 @@ function predict(theta, sample) {
   }
   catch (raw_exn){
     var exn = Caml_js_exceptions.internalToOCamlException(raw_exn);
-    if (exn[0] === LinAlg$ReasonReactExamples.Matrix.WrongDimensions) {
-      return LinAlg$ReasonReactExamples.Matrix.make(/* array */[$$Array.init(10, (function (param) {
+    if (exn.RE_EXN_ID === LinAlg$ReasonReactExamples.Matrix.WrongDimensions) {
+      return LinAlg$ReasonReactExamples.Matrix.make([$$Array.init(10, (function (param) {
                           return 0.0;
                         }))]);
-    } else {
-      throw exn;
     }
+    throw exn;
   }
   return LinAlg$ReasonReactExamples.Matrix.transform(linear, (function (param, param$1, e) {
                 return sigmoid(e);
@@ -259,4 +252,4 @@ exports.normalize = normalize;
 exports.LinReg = LinReg;
 exports.LogReg = LogReg;
 exports.NIST = NIST;
-/* LinAlg-ReasonReactExamples Not a pure module */
+/* No side effect */

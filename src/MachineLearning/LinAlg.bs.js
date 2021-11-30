@@ -1,38 +1,37 @@
 'use strict';
 
-var $$Array = require("bs-platform/lib/js/array.js");
-var Curry = require("bs-platform/lib/js/curry.js");
-var Caml_obj = require("bs-platform/lib/js/caml_obj.js");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
-var Caml_int32 = require("bs-platform/lib/js/caml_int32.js");
-var Caml_exceptions = require("bs-platform/lib/js/caml_exceptions.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Curry = require("rescript/lib/js/curry.js");
+var Caml_obj = require("rescript/lib/js/caml_obj.js");
+var Caml_array = require("rescript/lib/js/caml_array.js");
+var Caml_int32 = require("rescript/lib/js/caml_int32.js");
+var Caml_exceptions = require("rescript/lib/js/caml_exceptions.js");
 
-var WrongDimensions = Caml_exceptions.create("LinAlg-ReasonReactExamples.Matrix.WrongDimensions");
+var WrongDimensions = /* @__PURE__ */Caml_exceptions.create("LinAlg-ReasonReactExamples.Matrix.WrongDimensions");
 
 function make(raw) {
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             raw.length,
-            Caml_array.caml_array_get(raw, 0).length
+            Caml_array.get(raw, 0).length
           ],
           raw
         ];
 }
 
 function vector(v) {
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             v.length,
             1
           ],
           $$Array.init(v.length, (function (ix) {
-                  return /* array */[Caml_array.caml_array_get(v, ix)];
+                  return [Caml_array.get(v, ix)];
                 }))
         ];
 }
 
-var raw_transform = (
-    function (m, r, c) {
+var raw_transform = (function (m, r, c) {
       let ans = Array(c).fill().map(() => Array(r).fill(0.0));
       for (let iy = 0; iy < c; iy++) {
         for (let ix = 0; ix < r; ix++) {
@@ -40,19 +39,18 @@ var raw_transform = (
         }
       }
       return ans;
-    }
-  );
+    });
 
 function transpose(param) {
   var match = param[0];
   var c = match[1];
   var r = match[0];
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             c,
             r
           ],
-          Curry._3(raw_transform, param[1], r, c)
+          raw_transform(param[1], r, c)
         ];
 }
 
@@ -64,30 +62,29 @@ function reduce_n(fn, limit) {
     var ix = _ix;
     if (ix === limit) {
       return sum;
-    } else {
-      _sum = Curry._2(fn, sum, ix);
-      _ix = ix + 1 | 0;
-      continue ;
     }
+    _sum = Curry._2(fn, sum, ix);
+    _ix = ix + 1 | 0;
+    continue ;
   };
 }
 
 function dot(param, param$1, fn) {
-  var b = param$1[1];
   var d_b = param$1[0];
-  var a = param[1];
   var d_a = param[0];
-  var match = d_a[0] !== d_b[0];
-  if (match) {
-    throw [
-          WrongDimensions,
-          d_a,
-          d_b
-        ];
+  if (d_a[0] !== d_b[0]) {
+    throw {
+          RE_EXN_ID: WrongDimensions,
+          _1: d_a,
+          _2: d_b,
+          Error: new Error()
+        };
   }
+  var b = param$1[1];
+  var a = param[1];
   return make($$Array.init(d_a[0], (function (r) {
                     return $$Array.init(d_a[1], (function (c) {
-                                  return Curry._2(fn, Caml_array.caml_array_get(Caml_array.caml_array_get(a, r), c), Caml_array.caml_array_get(Caml_array.caml_array_get(b, r), Caml_int32.mod_(c, d_b[1])));
+                                  return Curry._2(fn, Caml_array.get(Caml_array.get(a, r), c), Caml_array.get(Caml_array.get(b, r), Caml_int32.mod_(c, d_b[1])));
                                 }));
                   })));
 }
@@ -104,8 +101,7 @@ function res(a, b) {
               }));
 }
 
-var raw_mult = (
-    function (a, b, rx, ry, rp) {
+var raw_mult = (function (a, b, rx, ry, rp) {
       const ans = Array(rx).fill().map(() => Array(ry).fill(0.0));
       for (let ix = 0; ix < rx; ix++) {
         for (let iy = 0; iy < ry; iy++) {
@@ -115,34 +111,33 @@ var raw_mult = (
         }
       }
       return ans;
-    }
-  );
+    });
 
 function cross(param, param$1) {
   var d_b = param$1[0];
   var d_a = param[0];
-  var match = d_a[1] !== d_b[0];
-  if (match) {
-    throw [
-          WrongDimensions,
-          d_a,
-          d_b
-        ];
+  if (d_a[1] !== d_b[0]) {
+    throw {
+          RE_EXN_ID: WrongDimensions,
+          _1: d_a,
+          _2: d_b,
+          Error: new Error()
+        };
   }
   var pr = d_a[0];
   var pc = d_b[1];
   var pivot = d_a[1];
-  return make(Curry._5(raw_mult, param[1], param$1[1], pr, pc, pivot));
+  return make(raw_mult(param[1], param$1[1], pr, pc, pivot));
 }
 
 function transform(param, fn) {
   var m = param[1];
   var d = param[0];
-  return /* tuple */[
+  return [
           d,
           $$Array.init(d[0], (function (r) {
                   return $$Array.init(d[1], (function (c) {
-                                return Curry._3(fn, r, c, Caml_array.caml_array_get(Caml_array.caml_array_get(m, r), c));
+                                return Curry._3(fn, r, c, Caml_array.get(Caml_array.get(m, r), c));
                               }));
                 }))
         ];
@@ -157,15 +152,15 @@ function reduce(param, fn) {
 function reduce_rows(param) {
   var m = param[1];
   var dr = param[0][0];
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             dr,
             1
           ],
           $$Array.init(dr, (function (ix) {
-                  return /* array */[$$Array.fold_left((function (sum, e) {
+                  return [$$Array.fold_left((function (sum, e) {
                                   return sum + e;
-                                }), 0.0, Caml_array.caml_array_get(m, ix))];
+                                }), 0.0, Caml_array.get(m, ix))];
                 }))
         ];
 }
@@ -205,11 +200,11 @@ function size(t) {
 }
 
 function get(r, c, param) {
-  return Caml_array.caml_array_get(Caml_array.caml_array_get(param[1], r), c);
+  return Caml_array.get(Caml_array.get(param[1], r), c);
 }
 
 function set(r, c, v, param) {
-  return Caml_array.caml_array_set(Caml_array.caml_array_get(param[1], r), c, v);
+  return Caml_array.set(Caml_array.get(param[1], r), c, v);
 }
 
 function get_col(ix_c, param) {
@@ -217,21 +212,22 @@ function get_col(ix_c, param) {
   var c = match[1];
   var r = match[0];
   if (ix_c < 0 || ix_c >= c) {
-    throw [
-          WrongDimensions,
-          /* tuple */[
+    throw {
+          RE_EXN_ID: WrongDimensions,
+          _1: [
             r,
             1
           ],
-          /* tuple */[
+          _2: [
             r,
             c
-          ]
-        ];
+          ],
+          Error: new Error()
+        };
   }
   var raw = param[1];
   return vector($$Array.init(r, (function (ix_r) {
-                    return Caml_array.caml_array_get(Caml_array.caml_array_get(raw, ix_r), ix_c);
+                    return Caml_array.get(Caml_array.get(raw, ix_r), ix_c);
                   })));
 }
 
@@ -240,26 +236,24 @@ function add_col(v, param) {
   var match = param[0];
   var c = match[1];
   var r = match[0];
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             r,
             c + 1 | 0
           ],
           $$Array.init(r, (function (ir) {
                   return $$Array.init(c + 1 | 0, (function (ic) {
-                                var match = ic === 0;
-                                if (match) {
+                                if (ic === 0) {
                                   return v;
                                 } else {
-                                  return Caml_array.caml_array_get(Caml_array.caml_array_get(raw, ir), ic - 1 | 0);
+                                  return Caml_array.get(Caml_array.get(raw, ir), ic - 1 | 0);
                                 }
                               }));
                 }))
         ];
 }
 
-var raw_max_idx = (
-    function (m, r, c) {
+var raw_max_idx = (function (m, r, c) {
       const ans = Array(r);
       for (let ix = 0; ix < r; ix++) {
         let max_iy = 0;
@@ -271,42 +265,40 @@ var raw_max_idx = (
         ans[ix] = [max_iy];
       }
       return ans;
-    }
-  );
+    });
 
 function max_idx(param) {
   var match = param[0];
   var r = match[0];
-  return /* tuple */[
-          /* tuple */[
+  return [
+          [
             r,
             1
           ],
-          Curry._3(raw_max_idx, param[1], r, match[1])
+          raw_max_idx(param[1], r, match[1])
         ];
 }
 
-var raw_pct_eq = (
-    function (a, b, r) {
+var raw_pct_eq = (function (a, b, r) {
       let pct = 0.0;
       for (let ix = 0; ix < r; ix++) {
         pct += (Math.abs(a[ix] - b[ix]) < 0.00000001) ? 1.0 : 0.0;
       }
       return pct / r;
-    }
-  );
+    });
 
 function pct_eq(param, param$1) {
   var db = param$1[0];
   var da = param[0];
   if (Caml_obj.caml_notequal(da, db)) {
-    throw [
-          WrongDimensions,
-          da,
-          db
-        ];
+    throw {
+          RE_EXN_ID: WrongDimensions,
+          _1: da,
+          _2: db,
+          Error: new Error()
+        };
   }
-  return Curry._3(raw_pct_eq, param[1], param$1[1], da[0]);
+  return raw_pct_eq(param[1], param$1[1], da[0]);
 }
 
 var Matrix = {
@@ -341,4 +333,4 @@ var Matrix = {
 };
 
 exports.Matrix = Matrix;
-/* raw_transform Not a pure module */
+/* No side effect */

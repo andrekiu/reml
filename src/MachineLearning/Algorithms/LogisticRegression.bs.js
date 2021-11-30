@@ -1,11 +1,11 @@
 'use strict';
 
-var List = require("bs-platform/lib/js/list.js");
-var $$Array = require("bs-platform/lib/js/array.js");
-var Curry = require("bs-platform/lib/js/curry.js");
+var List = require("rescript/lib/js/list.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
-var Random = require("bs-platform/lib/js/random.js");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
+var Random = require("rescript/lib/js/random.js");
+var Caml_array = require("rescript/lib/js/caml_array.js");
 var ML$ReasonReactExamples = require("../ML.bs.js");
 var Canvas$ReasonReactExamples = require("../Canvas.bs.js");
 var LinAlg$ReasonReactExamples = require("../LinAlg.bs.js");
@@ -17,12 +17,11 @@ function forn(n, fn) {
   while(true) {
     var ix = _ix;
     if (ix === n) {
-      return /* () */0;
-    } else {
-      Curry._1(fn, ix);
-      _ix = ix + 1 | 0;
-      continue ;
+      return ;
     }
+    Curry._1(fn, ix);
+    _ix = ix + 1 | 0;
+    continue ;
   };
 }
 
@@ -39,15 +38,12 @@ function get_color(n, y) {
     var ix = _ix;
     if (ix === cols) {
       return -1;
-    } else {
-      var match$1 = (LinAlg$ReasonReactExamples.Matrix.get(n, ix, y) | 0) === 1;
-      if (match$1) {
-        return ix;
-      } else {
-        _ix = ix + 1 | 0;
-        continue ;
-      }
     }
+    if ((LinAlg$ReasonReactExamples.Matrix.get(n, ix, y) | 0) === 1) {
+      return ix;
+    }
+    _ix = ix + 1 | 0;
+    continue ;
   };
 }
 
@@ -55,11 +51,11 @@ function LogisticRegression$Fit(Props) {
   var x_m = Props.x_m;
   var y = Props.y;
   var theta = Props.theta;
-  var dims = /* tuple */[
+  var dims = [
     400,
     400
   ];
-  var pallete = /* array */[
+  var pallete = [
     "green",
     "blue",
     "red",
@@ -71,8 +67,8 @@ function LogisticRegression$Fit(Props) {
               children: (function (ctx, scale) {
                   var match = LinAlg$ReasonReactExamples.Matrix.size(x_m);
                   var points = $$Array.init(match[0], (function (ix) {
-                          return /* tuple */[
-                                  /* tuple */[
+                          return [
+                                  [
                                     LinAlg$ReasonReactExamples.Matrix.get(ix, 1, x_m),
                                     LinAlg$ReasonReactExamples.Matrix.get(ix, 2, x_m)
                                   ],
@@ -87,23 +83,23 @@ function LogisticRegression$Fit(Props) {
                   var low = match$2[0];
                   var t = match$1[0];
                   $$Array.iter((function (p) {
-                          return Stylus$ReasonReactExamples.draw_point(ctx, Curry._1(t, p[0]), Caml_array.caml_array_get(pallete, p[1]), /* () */0);
+                          return Stylus$ReasonReactExamples.draw_point(ctx, Curry._1(t, p[0]), Caml_array.get(pallete, p[1]), undefined);
                         }), points);
                   var match$3 = LinAlg$ReasonReactExamples.Matrix.size(theta);
                   return forn(match$3[1], (function (ix) {
                                 var line = List.map((function (e) {
-                                        return Curry._1(t, /* tuple */[
+                                        return Curry._1(t, [
                                                     e,
                                                     near_boundary(e, LinAlg$ReasonReactExamples.Matrix.get_col(ix, theta))
                                                   ]);
-                                      }), /* :: */[
-                                      low,
-                                      /* :: */[
-                                        high,
-                                        /* [] */0
-                                      ]
-                                    ]);
-                                return Stylus$ReasonReactExamples.draw_line(ctx, line, Caml_array.caml_array_get(pallete, ix), /* () */0);
+                                      }), {
+                                      hd: low,
+                                      tl: {
+                                        hd: high,
+                                        tl: /* [] */0
+                                      }
+                                    });
+                                return Stylus$ReasonReactExamples.draw_line(ctx, line, Caml_array.get(pallete, ix), undefined);
                               }));
                 }),
               dims: dims
@@ -130,21 +126,21 @@ function getRandomTheta(y) {
 function LogisticRegression$Train(Props) {
   var x_m = Props.x_m;
   var y = Props.y;
-  var match = React.useState((function () {
-          return getRandomTheta(y);
-        }));
+  var match = React.useState(function () {
+        return getRandomTheta(y);
+      });
   var setTheta = match[1];
   var theta = match[0];
   React.useEffect((function () {
           setTimeout((function (param) {
-                  var next = ML$ReasonReactExamples.LogReg.gradient_step(20, theta, x_m, y);
+                  var next = ML$ReasonReactExamples.LogReg.gradient_step(1, theta, x_m, y);
                   Curry._1(setTheta, (function (param) {
                           return next;
                         }));
-                  return /* () */0;
+                  
                 }), 16);
-          return ;
-        }), /* array */[theta]);
+          
+        }), [theta]);
   return React.createElement(LogisticRegression$Fit, {
               x_m: x_m,
               y: y,
@@ -158,23 +154,22 @@ var Train = {
 };
 
 function LogisticRegression(Props) {
-  var points = DataGen$ReasonReactExamples.Points.clusters(6, 800);
+  var points = DataGen$ReasonReactExamples.Points.clusters(4, 800);
   var __x = LinAlg$ReasonReactExamples.Matrix.make($$Array.init(800, (function (ix) {
-              var match = Caml_array.caml_array_get(points, ix)[0];
-              return /* array */[
+              var match = Caml_array.get(points, ix)[0];
+              return [
                       1,
                       match[0],
                       match[1]
                     ];
             })));
-  var match = ML$ReasonReactExamples.norm(__x, /* array */[
+  var match = ML$ReasonReactExamples.norm(__x, [
         1,
         2
-      ], /* () */0);
+      ], undefined);
   var y = LinAlg$ReasonReactExamples.Matrix.make($$Array.init(800, (function (row) {
-              return $$Array.init(6, (function (col) {
-                            var match = (Caml_array.caml_array_get(points, row)[1] - col | 0) === 0;
-                            if (match) {
+              return $$Array.init(4, (function (col) {
+                            if ((Caml_array.get(points, row)[1] - col | 0) === 0) {
                               return 1.0;
                             } else {
                               return 0.0;

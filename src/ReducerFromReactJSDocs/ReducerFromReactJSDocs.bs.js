@@ -1,6 +1,6 @@
 'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
+var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
 
 var leftButtonStyle = {

@@ -1,8 +1,7 @@
 'use strict';
 
 
-((
-  (() => {
+(((() => {
   this.currentScript = {
     getAttribute: (e) => {
       if (e == "data-module") {
@@ -16,7 +15,6 @@
   this.window = this;
   this.document = this;
   importScripts("/moduleserve/load.js");
-  })()
-));
+  })()));
 
 /*  Not a pure module */

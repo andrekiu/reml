@@ -1,8 +1,8 @@
 'use strict';
 
-var $$Array = require("bs-platform/lib/js/array.js");
-var Random = require("bs-platform/lib/js/random.js");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
+var $$Array = require("rescript/lib/js/array.js");
+var Random = require("rescript/lib/js/random.js");
+var Caml_array = require("rescript/lib/js/caml_array.js");
 
 function gen(len) {
   Random.init(Date.now() | 0);
@@ -12,7 +12,7 @@ function gen(len) {
                 var shift_error = Random.$$float(40);
                 var slope_error = Random.$$float(slope / 2) - slope / 4;
                 var x = Random.$$float(400.0);
-                return /* tuple */[
+                return [
                         x,
                         shift + shift_error + (slope + slope_error) * (Random.$$float(400) - x)
                       ];
@@ -23,7 +23,7 @@ function clusters(n, len) {
   Random.init(Date.now() | 0);
   var p = 1 / n;
   var circles = $$Array.init(n, (function (param) {
-          return /* tuple */[
+          return [
                   Random.$$float(400),
                   Random.$$float(400),
                   50.0 + Random.$$float(20)
@@ -31,13 +31,13 @@ function clusters(n, len) {
         }));
   return $$Array.init(len, (function (param) {
                 var cluster = Random.$$float(1) / p | 0;
-                var match = Caml_array.caml_array_get(circles, cluster);
+                var match = Caml_array.get(circles, cluster);
                 var angle = 2.0 * Random.$$float(Math.acos(-1));
                 var r = Random.$$float(match[2]);
                 var x = Math.cos(angle) * r;
                 var y = Math.sin(angle) * r;
-                return /* tuple */[
-                        /* tuple */[
+                return [
+                        [
                           match[0] + x,
                           match[1] + y
                         ],

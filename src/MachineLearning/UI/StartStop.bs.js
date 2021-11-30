@@ -1,13 +1,13 @@
 'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
+var Curry = require("rescript/lib/js/curry.js");
 var React = require("react");
 
 function StartStop(Props) {
   var children = Props.children;
-  var match = React.useState((function () {
-          return false;
-        }));
+  var match = React.useState(function () {
+        return false;
+      });
   var setStatus = match[1];
   var status = match[0];
   return React.createElement("div", undefined, React.createElement("button", {
